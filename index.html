@@ -58,7 +58,7 @@
 <li><a href="https://docs.google.com/spreadsheets/d/1UFbSo0lE4-bLGHIX-1MGRGNeHNF7MKwOJYs7zcCNyQw/edit">UMKM T2–T3</a></li>
 <li><a href="https://docs.google.com/spreadsheets/d/126yevZ97QuW4RKJMGXyz9n6yTW44sA6QhrvgEOZeRlo/edit">UMKM T4</a></li>
 </ul></details>
-<p class="source" id="snapshotSource">Snapshot pembanding: analisis interim 10 September 2026 (SMK T2–T3 54, UMKM T1 78, UMKM T2–T3 7). Snapshot awal dashboard: pembacaan Google Sheets 6 November 2026. Selisih hanya dihitung pada wave dengan data pembanding terverifikasi. Jika API telah disambungkan, bagian ini menunjukkan waktu pembaruan agregat terakhir.</p>
+<p class="source" id="snapshotSource">Snapshot pembanding: analisis interim 10 September 2026 (SMK T2–T3 54, UMKM T1 78, UMKM T2–T3 7). Snapshot awal dashboard: pembacaan Google Sheets 6 November 2026. Selisih hanya dihitung pada wave dengan data pembanding terverifikasi. Pembaruan snapshot dilakukan setelah verifikasi manual.</p>
 </section></main><div class="foot">SIDEK ERP · Monitoring data penelitian · Versi statis interaktif</div>
 <script>
 'use strict';
@@ -79,16 +79,22 @@ function draw(){
  document.querySelectorAll('[data-group]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.group===group)));
  document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));
  const subset=selected(), svg=document.querySelector('#mainChart');
- const max=Math.max(25,Math.ceil(Math.max(...subset.map(x=>mode==='current'?x.now:(x.old===null?0:x.now-x.old)),1)/25)*25), top=29, left=112, bottom=299, plotW=505, rowH=30, gap=7;
+ const vals=subset.map(x=>mode==='current'?x.now:(x.old===null?null:x.now-x.old));
+ const lowest=Math.min(0,...vals.filter(v=>v!==null)),highest=Math.max(1,...vals.filter(v=>v!==null));
+ const minScale=lowest<0?Math.floor(lowest/25)*25:0,maxScale=Math.ceil(highest/25)*25;
+ const top=29,left=112,plotW=505,rowH=26,gap=10,bottom=top+subset.length*(rowH+gap)+4;
+ const range=Math.max(1,maxScale-minScale);
+ const pos=v=>left+(v-minScale)/range*plotW;
  let markup='';
- for(let n=0;n<=4;n++){const x=left+(n*max/4)/max*plotW;markup+='<line x1="'+x+'" y1="'+(top-4)+'" x2="'+x+'" y2="'+bottom+'" stroke="#e4eaf3"/><text x="'+x+'" y="'+(bottom+20)+'" text-anchor="middle">'+(n*max/4)+'</text>'}
- subset.forEach((x,i)=>{const val=mode==='current'?x.now:(x.old===null?null:x.now-x.old);const y=top+i*(rowH+gap);const width=val===null?0:val/max*plotW;const c=x.group==='SMK'?'#245ee1':'#079988';
- markup+='<text x="'+(left-13)+'" y="'+(y+18)+'" text-anchor="end">'+x.group+' '+x.wave+'</text>';
- if(val!==null&&val>0){markup+='<rect x="'+left+'" y="'+y+'" width="'+width+'" height="'+rowH+'" rx="5" fill="'+c+'" role="presentation"><title>'+x.group+' '+x.wave+': '+val+' respons</title></rect>'}
- markup+='<text class="value-label" x="'+(left+Math.max(width,0)+8)+'" y="'+(y+18)+'">'+(val===null?'n/a':val)+'</text>';
+ for(let n=0;n<=4;n++){const value=minScale+n*range/4;const x=pos(value);markup+='<line x1="'+x+'" y1="'+(top-4)+'" x2="'+x+'" y2="'+bottom+'" stroke="'+(Math.abs(value)<0.001?'#9db0c8':'#e4eaf3')+'"/><text x="'+x+'" y="'+(bottom+18)+'" text-anchor="middle">'+Math.round(value)+'</text>'}
+ subset.forEach((item,i)=>{const val=vals[i];const y=top+i*(rowH+gap);const c=item.group==='SMK'?'#245ee1':'#079988';
+ markup+='<text x="'+(left-10)+'" y="'+(y+18)+'" text-anchor="end">'+item.group+' '+item.wave+'</text>';
+ if(val!==null&&val!==0){const from=pos(Math.min(0,val)),to=pos(Math.max(0,val));markup+='<rect x="'+from+'" y="'+y+'" width="'+(to-from)+'" height="'+rowH+'" rx="5" fill="'+c+'"><title>'+item.group+' '+item.wave+': '+val+' respons</title></rect>'}
+ const labelX=val===null?pos(0)+8:val<0?pos(val)-7:pos(val)+7;
+ markup+='<text class="value-label" x="'+labelX+'" y="'+(y+18)+'" text-anchor="'+(val!==null&&val<0?'end':'start')+'">'+(val===null?'n/a':val)+'</text>';
  });
  svg.innerHTML=markup;
- svg.setAttribute('viewBox','0 0 670 '+Math.max(210,subset.length*(rowH+gap)+56));
+ svg.setAttribute('viewBox','0 0 670 '+bottom+45);
  svg.setAttribute('aria-label',mode==='current'?'Jumlah respons terbaru untuk '+(group==='all'?'semua kelompok':group):'Perubahan respons terukur untuk '+(group==='all'?'semua kelompok':group));
  const small=document.querySelector('#smallTable tbody');small.replaceChildren();
  subset.forEach(x=>{const tr=document.createElement('tr');const delta=x.old===null?'—':(x.now-x.old>=0?'+':'')+(x.now-x.old);for(const [i,s] of [x.group+' '+x.wave,fmt(x.now),delta].entries()){const td=document.createElement('td');td.textContent=s;if(i)td.className='number';if(i===2&&x.old!==null)td.classList.add('up');tr.append(td)}small.append(tr)});
@@ -100,7 +106,7 @@ function fillTable(){
 }
 document.querySelectorAll('[data-group]').forEach(b=>b.addEventListener('click',()=>{group=b.dataset.group;draw()}));
 document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mode;draw()}));
-document.querySelector('#dateText').textContent='Per 6 November 2026';
+document.querySelector('#dateText').textContent='Snapshot: 6 November 2026';
 document.querySelector('#export').addEventListener('click',()=>{const rows=[['Dataset','Snapshot lama','Snapshot terkini','Perubahan','Catatan'],...selected().map(x=>[x.group+' '+x.wave,fmt(x.old),x.now,x.old===null?'':x.now-x.old,x.note])];const csv='\uFEFF'+rows.map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='SIDEK_ERP_progress_2026-11-06.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000)});
 
 const schoolUnits=[
@@ -119,11 +125,11 @@ let businessUniqueByWave=[79,75,10,0];
 function drawEntities(){
 const isSchool=entityGroup==='SMK',units=isSchool?schoolUnits:businessUnits;
 document.querySelectorAll('[data-entity]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.entity===entityGroup)));
-document.querySelector('#org-total').textContent=isSchool?String(businessUniqueByWave[0]);
+document.querySelector('#org-total').textContent=isSchool?String(schoolUnits.length):String(businessUniqueByWave[0]);
 document.querySelector('#org-total-label').textContent=isSchool?'SMK tercatat':'Nama usaha unik di T0';
-document.querySelector('#org-pre').textContent=isSchool?String(businessUniqueByWave[1]);
+document.querySelector('#org-pre').textContent=isSchool?String(schoolUnits.filter(x=>x.counts[0]>0).length):String(businessUniqueByWave[1]);
 document.querySelector('#org-pre-label').textContent=isSchool?'SMK dengan T0':'Nama usaha unik di T1';
-document.querySelector('#org-implement').textContent=isSchool?String(businessUniqueByWave[2]);
+document.querySelector('#org-implement').textContent=isSchool?String(schoolUnits.filter(x=>x.counts[2]>0).length):String(businessUniqueByWave[2]);
 document.querySelector('#org-implement-label').textContent=isSchool?'SMK dengan T2–T3':'Nama usaha unik di T2–T3';
 document.querySelector('#org-table-title').textContent=isSchool?'SMK menurut nama sekolah':'UMKM menurut lokasi pelatihan';
 document.querySelector('#org-table-caption').textContent=isSchool?'Jumlah respons siswa per sekolah dan wave.':'Jumlah nama usaha berbeda pada tiap wilayah dan wave.';
@@ -143,6 +149,27 @@ svg.setAttribute('aria-label',isSchool?'Respons empat sekolah per wave':'Usaha u
 }
 document.querySelectorAll('[data-entity]').forEach(b=>b.addEventListener('click',()=>{entityGroup=b.dataset.entity;drawEntities();}));
 drawEntities();
+
+
+function validateSnapshot(){
+ const byKey=new Map(source.map(r=>[r.group+':'+r.wave,r.now]));
+ const keys=['SMK','UMKM'].flatMap(g=>['T0','T1','T2–T3','T4'].map(w=>g+':'+w));
+ if(source.length!==8||keys.some(k=>!byKey.has(k))||source.some(r=>!Number.isInteger(r.now)||r.now<0))throw Error('Snapshot tidak lengkap atau jumlah respons invalid.');
+ for(const [i,w] of ['T0','T1','T2–T3'].entries()){
+  const smk=schoolUnits.reduce((s,r)=>s+r.counts[i],0);
+  const umkm=businessUnits.reduce((s,r)=>s+r.counts[i],0);
+  if(smk!==byKey.get('SMK:'+w))throw Error('Total sekolah pada '+w+' tidak cocok dengan respons SMK.');
+  if(umkm!==businessUniqueByWave[i])throw Error('Total nama usaha per wilayah pada '+w+' tidak cocok.');
+ }
+}
+function renderKpis(){
+ const get=(g,w)=>source.find(x=>x.group===g&&x.wave===w).now;
+ document.querySelector('#k-total').textContent=source.reduce((s,x)=>s+x.now,0).toLocaleString('id-ID');
+ document.querySelector('#k-baseline').textContent=get('UMKM','T0').toLocaleString('id-ID');
+ document.querySelector('#k-repeated').textContent=(get('SMK','T2–T3')+get('UMKM','T2–T3')).toLocaleString('id-ID');
+ document.querySelector('#k-t4').textContent=(get('SMK','T4')+get('UMKM','T4')).toLocaleString('id-ID');
+}
+validateSnapshot();renderKpis();
 
 fillTable();draw();
 

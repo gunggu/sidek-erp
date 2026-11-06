@@ -7,16 +7,34 @@
 *{box-sizing:border-box}body{margin:0}button,select,input{font:inherit}button{cursor:pointer}a{color:#205ac7}header{background:linear-gradient(128deg,#0f2b4c,#164f7d 67%,#067c92);color:#fff;padding:29px max(22px,calc((100vw - 1180px)/2)) 77px}
 .top{display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:11px;font-size:14px;font-weight:750;letter-spacing:.08em}.mark{background:#e5f8ff;color:#104467;width:35px;height:35px;border-radius:10px;display:grid;place-items:center;font-size:19px}.snapshot{border:1px solid #8ac8ee7d;background:#ffffff14;color:#d2edfa;padding:7px 12px;border-radius:99px;font-size:12px}h1{font-size:clamp(29px,4.8vw,47px);line-height:1.14;letter-spacing:-.035em;margin:30px 0 10px;max-width:720px}header p{margin:0;line-height:1.65;color:#cfe5f3;max-width:720px}main{max-width:1220px;padding:0 20px 48px;margin:-41px auto 0}.panel,.stat{border:1px solid var(--border);background:var(--paper);border-radius:17px;box-shadow:0 8px 25px #122d4810}.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.stat{padding:21px}.stat .v{font-size:34px;line-height:1.2;font-weight:800;letter-spacing:-.04em}.stat .k{font-size:13px;color:var(--sub);margin-top:6px}.stat .n{font-size:11px;color:#07776c;font-weight:600;margin-top:9px}.panel{padding:25px;margin-top:19px}h2{margin:0 0 5px;letter-spacing:-.02em;font-size:21px}h3{font-size:16px;margin:0 0 5px}.subtitle{color:var(--sub);margin:0 0 16px;font-size:13px;line-height:1.65}.controls{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-bottom:17px}.group{display:flex;gap:7px;flex-wrap:wrap}.chip{border:1px solid #d1deee;color:#39536f;background:#fff;padding:8px 13px;font-size:13px;font-weight:650;border-radius:10px}.chip[aria-pressed=true]{background:#173b67;border-color:#173b67;color:#fff}.right{margin-left:auto}.secondary{border:1px solid #cbd9e9;background:#f7faff;color:#234769;padding:8px 12px;border-radius:9px;font-size:12px;font-weight:650}.secondary:hover{background:#eaf3ff}.cols{display:grid;grid-template-columns:1.3fr 1fr;gap:18px}.viz{min-width:0}svg{max-width:100%;height:auto;overflow:visible}svg text{font-family:inherit;fill:#46617d;font-size:12px}.legend{display:flex;gap:18px;align-items:center;flex-wrap:wrap;color:#60758a;font-size:12px;margin-top:13px}.dot{width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:6px}.scroller{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:720px}th{background:#eef4fc;text-align:left;font-size:12px;color:#34516e}th,td{border-bottom:1px solid #e7edf5;padding:12px}td{font-size:13px}.number{text-align:right;font-variant-numeric:tabular-nums}tbody tr:hover{background:#f7fbff}.up{color:#007b69;font-weight:800}.dim{color:#8190a3}.tag{display:inline-block;background:#e9f7f3;color:#007969;border-radius:7px;padding:3px 7px;font-size:11px;font-weight:700}.waiting{background:#fff3df;color:#875b15}.insights{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.insight{background:#f5f9fd;border:1px solid #e4ecf4;border-radius:12px;padding:15px}.insight p{color:#577088;font-size:13px;line-height:1.6;margin:8px 0 0}.warning{border-left:4px solid #ebad46;background:#fff7e9;padding:16px 18px;border-radius:9px;color:#624b28;font-size:13px;line-height:1.7}.source{font-size:12px;color:#627990;line-height:1.8}.source summary{cursor:pointer;font-weight:700;color:#23415f}.links{margin:8px 0 0;padding-left:18px}.links li{margin:2px 0}.foot{padding:20px;text-align:center;color:#75859a;font-size:12px}.sr{position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;overflow:hidden}.mini{color:#74869a;font-size:12px}.date{font-size:13px;color:#6f8196;font-weight:600}.value-label{font-weight:750;fill:#263e56!important}@media(max-width:920px){.summary{grid-template-columns:repeat(2,1fr)}.cols,.insights{grid-template-columns:1fr}.right{margin-left:0}}@media(max-width:480px){header{padding:23px 19px 75px}.top{align-items:flex-start}.snapshot{max-width:130px;text-align:center}main{padding:0 12px 35px}.stat{padding:16px}.stat .v{font-size:28px}.panel{padding:18px}h1{margin-top:24px}.controls{gap:9px}.chip{padding:7px 10px}}
 @media(prefers-reduced-motion:no-preference){.chip,.secondary{transition:background .17s,border-color .17s}}
-</style></head>
+
+.entity-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between}.org-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.org-stat{border:1px solid #dfeaf4;background:#f7faff;padding:16px;border-radius:13px}.org-stat strong{font-size:29px;display:block;line-height:1.1;color:#15375c}.org-stat span{font-size:12px;color:#64768b}.entity-cols{display:grid;grid-template-columns:1fr 1fr;gap:17px}.entity-card{border:1px solid #e0e9f3;border-radius:13px;padding:17px;background:white}.entity-card h3{margin-bottom:7px}.entity-card table{min-width:390px}.entity-card td,.entity-card th{padding:10px 9px;font-size:12px}.entity-totals{background:#eef6ff;font-weight:800}.entity-foot{margin-top:12px;padding:12px;border-radius:9px;background:#f4f8fd;color:#526c85;font-size:12px;line-height:1.6}.entity-legend{display:flex;gap:13px;font-size:12px;color:#58718a;flex-wrap:wrap;margin-top:12px}.entity-legend i{width:10px;height:10px;display:inline-block;margin-right:6px;border-radius:2px}.tiny-action{border:1px solid #cddbea;background:#f9fbfe;border-radius:9px;padding:8px 12px;font-size:12px;color:#274c70;font-weight:700;cursor:pointer}.tiny-action[aria-pressed=true]{background:#143b66;color:#fff}@media(max-width:780px){.entity-cols{grid-template-columns:1fr}.org-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:500px){.org-grid{grid-template-columns:1fr 1fr}.entity-card{padding:12px}}</style></head>
 <body>
 <header><div class="top"><div class="brand"><span class="mark" aria-hidden="true">▦</span> SIDEK ERP · RESEARCH MONITOR</div><div class="snapshot" id="snapshotTop">6 NOV 2026</div></div>
 <h1>Perkembangan Data Penelitian SIDEK ERP</h1><p>Dashboard agregat pemantauan pengumpulan data ekosistem SMK–UMKM di Yogyakarta, Surabaya, dan Lampung. Grafik interaktif menampilkan volume respons, perubahan snapshot, serta kesiapan analisis.</p></header>
 <main>
 <section class="summary" aria-label="Indikator ringkasan">
-<div class="stat"><div class="v" id="k-total">527</div><div class="k">Total rekaman respons</div><div class="n">Bukan jumlah peserta unik</div></div>
+<div class="stat"><div class="v" id="k-total">537</div><div class="k">Total rekaman respons</div><div class="n">Bukan jumlah peserta unik</div></div>
 <div class="stat"><div class="v" id="k-baseline">83</div><div class="k">Baseline UMKM (T0)</div><div class="n">Tersedia untuk matching T0–T1</div></div>
-<div class="stat"><div class="v" id="k-repeated">213</div><div class="k">Respons implementasi T2–T3</div><div class="n">SMK + UMKM, repeated measures</div></div>
+<div class="stat"><div class="v" id="k-repeated">223</div><div class="k">Respons implementasi T2–T3</div><div class="n">SMK + UMKM, repeated measures</div></div>
 <div class="stat"><div class="v" id="k-t4">0</div><div class="k">Respons akhir T4</div><div class="n">Instrumen sudah tersedia</div></div>
+</section>
+
+<section class="panel" id="entity-monitor">
+<div class="entity-head"><div><h2>Cakupan SMK dan UMKM yang masuk data</h2><p class="subtitle">Organisasi dan usaha dihitung terpisah dari jumlah pengisi dan jumlah formulir. Klik filter untuk melihat kelompok sekolah atau usaha.</p></div>
+<div class="group" aria-label="Filter unit organisasi"><button class="tiny-action" data-entity="SMK" aria-pressed="true">4 SMK</button><button class="tiny-action" data-entity="UMKM" aria-pressed="false">UMKM per wilayah</button></div></div>
+<div class="org-grid" aria-label="Ringkasan cakupan organisasi">
+<div class="org-stat"><strong id="org-total">4</strong><span id="org-total-label">SMK tercatat</span></div>
+<div class="org-stat"><strong id="org-pre">4</strong><span id="org-pre-label">SMK dengan T0</span></div>
+<div class="org-stat"><strong id="org-implement">4</strong><span id="org-implement-label">SMK dengan T2–T3</span></div>
+</div>
+<div class="entity-cols">
+<div class="entity-card"><h3 id="org-table-title">SMK menurut nama sekolah</h3><p class="subtitle" id="org-table-caption">Baris adalah respons siswa pada masing-masing sekolah.</p>
+<div class="scroller"><table id="orgTable"><thead><tr><th id="org-col-name">Sekolah</th><th class="number">T0</th><th class="number">T1</th><th class="number">T2–T3</th></tr></thead><tbody></tbody></table></div></div>
+<div class="entity-card"><h3 id="org-chart-title">Distribusi respons antar-sekolah</h3><p class="subtitle" id="org-chart-caption">Bilah menunjukkan jumlah formulir, bukan siswa unik.</p><svg id="orgChart" viewBox="0 0 530 285" role="img" aria-label="Distribusi jumlah respons per sekolah"></svg>
+<div class="entity-legend"><span><i style="background:#245ee1"></i>T0</span><span><i style="background:#079988"></i>T1</span><span><i style="background:#ed9c3e"></i>T2–T3</span></div></div>
+</div>
+<div class="entity-foot" id="org-disclaimer">Empat SMK dihitung dari nilai instansi peserta. Angka di tabel adalah respons siswa per wave, bukan jumlah siswa unik.</div>
 </section>
 <section class="panel">
 <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap"><div><h2>Perkembangan menurut wave</h2><p class="subtitle">Pilih kelompok dan cara pembandingan. Arahkan kursor atau ketuk batang untuk rincian.</p></div><div class="date" id="dateText"></div></div>
@@ -26,7 +44,7 @@
 <section class="panel"><h2>Tabel pembanding seluruh dataset</h2><p class="subtitle">“Belum tercatat” berarti tidak ada angka snapshot yang terverifikasi, bukan nol. Nilai T4 = 0 adalah jumlah respons sebenarnya pada tanggal snapshot.</p><div class="scroller"><table id="fullTable"><thead><tr><th>Dataset</th><th class="number">Snapshot lama</th><th class="number">Terbaru</th><th class="number">Selisih</th><th>Status / catatan</th></tr></thead><tbody></tbody></table></div></section>
 <section class="panel"><h2>Temuan utama untuk kesiapan riset</h2><div class="insights">
 <div class="insight"><h3>01 · Baseline UMKM tersedia</h3><p>T0 UMKM memiliki 83 respons. Pengujian pre–post T0–T1 kini dapat dimulai setelah memadankan peserta atau usaha dan memeriksa item yang setara.</p></div>
-<div class="insight"><h3>02 · Proses implementasi lebih kaya</h3><p>T2–T3 sekarang mempunyai 185 rekaman SMK dan 28 UMKM. Ini observasi berulang, bukan 213 orang atau usaha unik.</p></div>
+<div class="insight"><h3>02 · Proses implementasi lebih kaya</h3><p>T2–T3 sekarang mempunyai 195 rekaman SMK dan 28 UMKM. Ini observasi berulang, bukan 223 orang atau usaha unik.</p></div>
 <div class="insight"><h3>03 · Endpoint masih kosong</h3><p>T4 SMK maupun UMKM masing-masing 0 respons. Dampak akhir dan sustained use belum bisa dipastikan dari survei T4.</p></div></div></section>
 <section class="panel"><h2>Integritas pengukuran</h2><div class="warning"><b>Interpretasi:</b> Pertumbuhan rekaman tidak identik dengan pertumbuhan partisipan. Matching lintas wave, cek duplikasi, klasifikasi UMKM mitra/non-mitra, serta integrasi log ERP dan dyad pendampingan harus mendahului pengujian perubahan akhir. Nilai September untuk beberapa wave belum pernah didokumentasikan sebagai total baris; dashboard menandainya sebagai belum tercatat.</div></section>
 <section class="panel"><h2>Sumber & pembaruan dashboard</h2><p class="subtitle">Data publik di halaman ini hanya agregat. Snapshot dirilis sebagai kode statis; tidak mengambil respons individual dari Google Drive, dan tidak melakukan sinkronisasi otomatis.</p>
@@ -40,14 +58,14 @@
 <li><a href="https://docs.google.com/spreadsheets/d/1UFbSo0lE4-bLGHIX-1MGRGNeHNF7MKwOJYs7zcCNyQw/edit">UMKM T2–T3</a></li>
 <li><a href="https://docs.google.com/spreadsheets/d/126yevZ97QuW4RKJMGXyz9n6yTW44sA6QhrvgEOZeRlo/edit">UMKM T4</a></li>
 </ul></details>
-<p class="source">Snapshot lama: analisis interim 10 September 2026 (angka tersedia: SMK T2–T3 54, UMKM T1 78, UMKM T2–T3 7). Snapshot baru: pembacaan langsung delapan spreadsheet per 6 November 2026. Selisih hanya dihitung pada pasangan yang memiliki pengamatan kuantitas pada kedua snapshot. Diperbarui manual dengan commit setelah verifikasi.</p>
+<p class="source">Snapshot lama: analisis interim 10 September 2026 (angka tersedia: SMK T2–T3 54, UMKM T1 78, UMKM T2–T3 7). Snapshot baru: pembacaan ulang delapan spreadsheet pada 6 November 2026; data T2–T3 SMK bertambah 10 rekaman sejak pemeriksaan sebelumnya. Selisih hanya dihitung pada pasangan yang memiliki pengamatan kuantitas pada kedua snapshot. Diperbarui manual dengan commit setelah verifikasi.</p>
 </section></main><div class="foot">SIDEK ERP · Monitoring data penelitian · Versi statis interaktif</div>
 <script>
 'use strict';
 const source = [
  {group:'SMK',wave:'T0',old:null,now:80,note:'Baseline pelatihan'},
  {group:'SMK',wave:'T1',old:null,now:73,note:'Pasca pelatihan'},
- {group:'SMK',wave:'T2–T3',old:54,now:185,note:'Observasi berulang'},
+ {group:'SMK',wave:'T2–T3',old:54,now:195,note:'Observasi berulang'},
  {group:'SMK',wave:'T4',old:null,now:0,note:'Form tersedia; 0 respons'},
  {group:'UMKM',wave:'T0',old:null,now:83,note:'Baseline baru terakses'},
  {group:'UMKM',wave:'T1',old:78,now:78,note:'Pasca pelatihan'},
@@ -84,5 +102,46 @@ document.querySelectorAll('[data-group]').forEach(b=>b.addEventListener('click',
 document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mode;draw()}));
 document.querySelector('#dateText').textContent='Per 6 November 2026';
 document.querySelector('#export').addEventListener('click',()=>{const rows=[['Dataset','Snapshot lama','Snapshot terkini','Perubahan','Catatan'],...selected().map(x=>[x.group+' '+x.wave,fmt(x.old),x.now,x.old===null?'':x.now-x.old,x.note])];const csv='\uFEFF'+rows.map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='SIDEK_ERP_progress_2026-11-06.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000)});
+
+const schoolUnits=[
+{name:'SMKN 1 Godean',region:'Yogyakarta',counts:[19,19,71]},
+{name:'SMK YPKK 2 Sleman',region:'Yogyakarta',counts:[16,15,94]},
+{name:'SMK Dr. Soetomo',region:'Surabaya',counts:[25,23,20]},
+{name:'SMKN 1 Seputih Surabaya',region:'Lampung',counts:[20,16,10]}
+];
+const businessUnits=[
+{name:'Yogyakarta',counts:[32,32,6]},
+{name:'Surabaya',counts:[26,25,4]},
+{name:'Lampung',counts:[21,18,0]}
+];
+let entityGroup='SMK';
+function drawEntities(){
+const isSchool=entityGroup==='SMK',units=isSchool?schoolUnits:businessUnits;
+document.querySelectorAll('[data-entity]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.entity===entityGroup)));
+document.querySelector('#org-total').textContent=isSchool?'4':'79';
+document.querySelector('#org-total-label').textContent=isSchool?'SMK tercatat':'Nama usaha unik di T0';
+document.querySelector('#org-pre').textContent=isSchool?'4':'75';
+document.querySelector('#org-pre-label').textContent=isSchool?'SMK dengan T0':'Nama usaha unik di T1';
+document.querySelector('#org-implement').textContent=isSchool?'4':'10';
+document.querySelector('#org-implement-label').textContent=isSchool?'SMK dengan T2–T3':'Nama usaha unik di T2–T3';
+document.querySelector('#org-table-title').textContent=isSchool?'SMK menurut nama sekolah':'UMKM menurut lokasi pelatihan';
+document.querySelector('#org-table-caption').textContent=isSchool?'Jumlah respons siswa per sekolah dan wave.':'Jumlah nama usaha berbeda pada tiap wilayah dan wave.';
+document.querySelector('#org-col-name').textContent=isSchool?'Sekolah':'Wilayah';
+document.querySelector('#org-chart-title').textContent=isSchool?'Distribusi respons antar-sekolah':'Cakupan usaha per wilayah';
+document.querySelector('#org-chart-caption').textContent=isSchool?'Bilah = respons siswa, termasuk repeated measures.':'Bilah = nama usaha unik dalam masing-masing wave.';
+document.querySelector('#org-disclaimer').textContent=isSchool?'Empat SMK dihitung dari instansi yang tercatat. Baris T0–T3 adalah jumlah pengisian formulir siswa, bukan jumlah siswa unik.':'Jumlah usaha dihitung dari nama usaha yang dinormalisasi (huruf, spasi dan tanda baca) per wave; 79 T0, 75 T1, 10 T2–T3. Satu usaha yang menulis nama berbeda dapat tercatat sebagai entitas berbeda. Total lintas wave tidak boleh dijumlahkan. Pada T4 belum ada respons.';
+const tbody=document.querySelector('#orgTable tbody');tbody.replaceChildren();
+let sum=[0,0,0];for(const unit of units){const tr=document.createElement('tr');const first=document.createElement('td');first.textContent=isSchool?unit.name+' · '+unit.region:unit.name;tr.append(first);unit.counts.forEach((n,i)=>{sum[i]+=n;const td=document.createElement('td');td.className='number';td.textContent=n;tr.append(td)});tbody.append(tr);}
+const total=document.createElement('tr');total.className='entity-totals';for(const x of ['Total per wave',...sum]){const td=document.createElement('td');td.textContent=x;if(typeof x==='number')td.className='number';total.append(td)}tbody.append(total);
+const svg=document.querySelector('#orgChart'),max=isSchool?105:40;
+let markup='',w=355,left=145;
+units.forEach((u,i)=>{let base=25+i*79;markup+='<text x="'+(left-8)+'" y="'+(base+26)+'" text-anchor="end">'+(u.name.length>18?u.name.slice(0,17)+'…':u.name)+'</text>';
+u.counts.forEach((v,j)=>{const y=base+j*17;const color=['#245ee1','#079988','#ed9c3e'][j];const ww=v/max*w;markup+='<rect x="'+left+'" y="'+y+'" width="'+Math.max(ww,0)+'" height="13" rx="3" fill="'+color+'"><title>'+u.name+' · '+['T0','T1','T2–T3'][j]+': '+v+'</title></rect><text x="'+(left+ww+5)+'" y="'+(y+11)+'">'+v+'</text>';});});
+svg.innerHTML=markup;svg.setAttribute('viewBox','0 0 530 '+(units.length*79+18));
+svg.setAttribute('aria-label',isSchool?'Respons empat sekolah per wave':'Usaha unik per wilayah dan wave');
+}
+document.querySelectorAll('[data-entity]').forEach(b=>b.addEventListener('click',()=>{entityGroup=b.dataset.entity;drawEntities();}));
+drawEntities();
+
 fillTable();draw();
 </script></body></html>

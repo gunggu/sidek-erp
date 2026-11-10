@@ -2,28 +2,28 @@
 
 Dashboard interaktif: `index.html` pada repositori [gunggu/sidek-erp](https://github.com/gunggu/sidek-erp).
 
-## Ketersediaan data (snapshot 9 November 2026)
+## Ketersediaan data (snapshot 10 November 2026)
 
 | Dataset | Jumlah baris respons |
 | --- | ---: |
 | SMK T0 | 80 |
 | SMK T1 | 73 |
-| SMK T2–T3 | 198 |
+| SMK T2–T3 | 213 |
 | SMK T4 | 0 |
 | UMKM T0 | 83 |
 | UMKM T1 | 78 |
-| UMKM T2–T3 | 41 |
+| UMKM T2–T3 | 42 |
 | UMKM T4 | 0 |
 
-Total: **553 baris respons**, bukan 553 responden unik. T2–T3 adalah pengukuran berulang.
+Total: **569 baris respons**, bukan 569 responden unik. T2–T3 adalah pengukuran berulang.
 
 Jumlah SMK yang dikenali = **4**. Nama usaha yang berbeda dalam satu wave = **79 T0, 75 T1, 11 T2–T3**; angka antar-wave tidak boleh dijumlahkan. Untuk penelitian, UMKM mitra implementasi harus dipisahkan dari seluruh UMKM peserta pelatihan.
 
-Sebelas pengisian UMKM T2–T3 pada 8 November berasal dari satu kombinasi responden–usaha dalam sekitar sembilan menit. Kasus ini ditandai pada master dan belum dapat dianggap sebelas pengukuran independen. Master berisi **116** pasangan T0–T1 (57 siswa, 8 guru, 51 UMKM) serta **293** baris `Identity_QA` yang memerlukan peninjauan, bukan 293 respons yang pasti tidak valid.
+Rancangan pendampingan mencakup sekitar **10 sesi**, sehingga pengisian T2–T3 berulang merupakan bagian desain, bukan otomatis duplikasi. Urutan submit bukan bukti nomor atau tanggal sesi. Tambahan 15 respons SMK dan satu respons UMKM pada 9–10 November telah ditautkan ke identitas komposit yang ada tanpa menimpa baris lama. Master berisi **116** pasangan T0–T1 (57 siswa, 8 guru, 51 UMKM) serta **294** entri `Identity_QA`, termasuk satu entri baru terkait perbedaan peran di sumber. Seluruh catatan QA terdahulu dipertahankan.
 
 ## Pembaruan manual melalui ChatGPT
 
-Bila ingin memperbarui, minta ChatGPT meninjau seluruh delapan spreadsheet, menelusuri duplikasi/identitas dan timestamp, lalu memperbarui agregat pada repositori ini. Jangan menambahkan nama individu, NIS, alamat surel, atau isi jawaban individu ke repositori publik.
+Bila ingin memperbarui, minta ChatGPT meninjau seluruh delapan spreadsheet, memeriksa konsistensi identitas, peran, dan timestamp tanpa menghapus pengisian berulang yang memang merupakan sesi pendampingan, lalu memperbarui agregat pada repositori ini. Jangan menambahkan nama individu, NIS, alamat surel, atau isi jawaban individu ke repositori publik.
 
 Langkah kontrol sebelum commit:
 1. Verifikasi akses delapan Google Sheets dan hitung respons **dari baris bertimestamp**, bukan `rowCount` grid.

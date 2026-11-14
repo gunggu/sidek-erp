@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><meta name="description" content="Analisis sementara empat research question SIDEK ERP berdasarkan dataset beku 14 November 2026.">
+<title>Analisis Riset &amp; RQ · SIDEK ERP</title><style>
+:root{font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#18314f;background:#f1f6fc;--border:#dde7f3}
+*{box-sizing:border-box}body{margin:0}a{color:#215dbb}header{background:linear-gradient(120deg,#103453,#15547e 70%,#087b87);color:#fff;padding:26px max(18px,calc((100vw - 1180px)/2)) 80px}
+.brand{font-size:12px;letter-spacing:.12em;font-weight:800;color:#d7f0fa}.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:#64c8c7}
+header h1{font-size:clamp(28px,4.5vw,43px);line-height:1.13;letter-spacing:-.035em;margin:24px 0 12px}header p{max-width:900px;color:#e0eff9;font-size:14px;line-height:1.75;margin:0}
+main{max-width:1220px;margin:-46px auto 0;padding:0 18px 55px}.nav{display:flex;gap:9px;background:#fff;border:1px solid var(--border);border-radius:15px;padding:8px;box-shadow:0 8px 24px #12324c13}
+.nav a{flex:1;text-align:center;text-decoration:none;font-size:14px;font-weight:750;padding:12px;border-radius:10px;color:#46617a}
+.nav a.active{background:#163e69;color:#fff}.nav a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #e6a92c;outline-offset:2px}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-top:17px}.card,.panel{background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:0 8px 24px #12324c0b}.card{padding:19px;min-width:0}.card strong{display:block;color:#143b61;font-size:32px;line-height:1.15}.card span{display:block;color:#637b92;font-size:12px;line-height:1.6;margin-top:7px}
+.panel{padding:24px;margin-top:19px}h2{font-size:21px;letter-spacing:-.025em;margin:0 0 7px}h3{font-size:16px;margin:0 0 9px;line-height:1.45}.sub{font-size:13px;line-height:1.7;color:#59728b;margin:0 0 17px}.overline{font-weight:800;letter-spacing:.12em;font-size:11px;text-transform:uppercase;color:#087d7a;margin:0 0 8px}
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}button{cursor:pointer;font:inherit}.filters button{border:1px solid #cddbec;background:#fff;border-radius:9px;padding:9px 13px;font-size:12px;color:#31536f;font-weight:750}.filters button[aria-pressed=true]{background:#163e69;border-color:#163e69;color:white}
+.rqgrid,.needs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.rq{display:flex;flex-direction:column;min-width:0;border:1px solid #dfe8f3;border-radius:13px;padding:18px;background:#fbfdff}.rq[hidden]{display:none}.rqtop{display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:wrap;margin-bottom:9px}.id{font-weight:850;font-size:12px;color:#256d8b}.badge{background:#fff5dd;color:#76521a;border:1px solid #e7ce8b;padding:5px 10px;border-radius:100px;font-weight:780;font-size:11px}.badge.red{background:#ffedeb;color:#843c39;border-color:#e8bab4}.badge.grey{background:#edf3fa;color:#47637d;border-color:#d0deeb}.rq p{font-size:13px;line-height:1.7;color:#506c85;margin:0 0 10px}.metric{background:#eef5fc;border-left:3px solid #3684ae;padding:11px;border-radius:8px;color:#284b68;font-size:13px;line-height:1.65;margin:8px 0 14px}.rq details{border-top:1px solid #e1eaf3;margin-top:auto;padding-top:13px}summary{color:#215581;font-size:13px;font-weight:800;cursor:pointer}ul{padding-left:19px;font-size:12px;line-height:1.7;color:#425e78}li{margin:7px 0}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}.barrow{margin-bottom:20px}.barname{display:flex;justify-content:space-between;font-size:13px;gap:9px;font-weight:750;color:#264863;margin-bottom:8px}.bar{height:15px;background:#e5eef8;overflow:hidden;border-radius:7px;margin-top:6px}.bar span{height:100%;display:block;background:#3771c8;border-radius:7px}.bar span.post{background:#079b8b}.barcaption{display:flex;justify-content:space-between;font-size:11px;color:#7488a0;margin-top:5px}
+table{width:100%;border-collapse:collapse;min-width:460px}th,td{padding:11px;border-bottom:1px solid #e4edf6;text-align:left;font-size:12px}th{background:#edf4fb;color:#355673}td.num,th.num{text-align:right} .scroll{overflow:auto}
+.need{background:#f8fbff;border:1px solid #dfebf5;padding:16px;border-radius:13px}.need p{font-size:12px;color:#60768d;line-height:1.5;margin:0}.need strong{color:#284b66}
+.note{font-size:12px;line-height:1.8;color:#586f86;background:#f4f7fa;padding:17px;border-radius:11px}.note p{margin:0 0 8px}.note p:last-child{margin:0}
+footer{text-align:center;color:#77889b;font-size:12px;padding:10px 18px 30px}
+@media(max-width:870px){.cards{grid-template-columns:repeat(2,1fr)}.rqgrid,.needs,.cols{grid-template-columns:1fr}}
+@media(max-width:480px){main{padding:0 11px 30px}.panel{padding:17px}header{padding:24px 18px 80px}.card{padding:14px}.card strong{font-size:28px}.nav a{font-size:12px}.rq{padding:15px}}
+</style></head>
+<body><header><div class="brand">SIDEK ERP · RESEARCH MONITOR / FROZEN 14 NOV 2026</div>
+<h1>Analisis Riset &amp; Kesiapan Menjawab RQ</h1><p>Temuan awal, dukungan bukti bagi empat research question, dan data pendukung yang perlu dilengkapi. Angka berasal dari <strong>snapshot beku 14 November 2026</strong>. Tidak ada klaim keberhasilan implementasi final atau kausalitas dari survei saja.</p></header>
+<main><nav class="nav" aria-label="Navigasi dashboard"><a href="index.html">Monitoring Data</a><a class="active" href="analisis.html" aria-current="page">Analisis Riset &amp; RQ</a></nav>
+<section class="cards" aria-label="Ringkasan analisis">
+<div class="card"><strong>614</strong><span>Respons beku (407 SMK, 207 UMKM), bukan peserta unik</span></div>
+<div class="card"><strong>116</strong><span>Pasangan T0–T1 sementara: 57 siswa, 8 guru, 51 UMKM</span></div>
+<div class="card"><strong>300</strong><span>Respons berulang T2–T3: 254 SMK, 46 UMKM</span></div>
+<div class="card"><strong>0</strong><span>Respons T4; outcome akhir belum terkumpul</span></div>
+</section>
+<section class="panel" aria-labelledby="rqh"><div class="overline">01 / Research Questions</div><h2 id="rqh">Status bukti untuk setiap RQ</h2><p class="sub">Status menjelaskan batas bukti metodologis, bukan persentase kesiapan yang diasumsikan. Pilih RQ atau buka daftar kebutuhan datanya.</p>
+<div class="filters" aria-label="Filter RQ"><button aria-pressed="true" data-rqfilter="all">Semua</button><button aria-pressed="false" data-rqfilter="1">RQ1</button><button aria-pressed="false" data-rqfilter="2">RQ2</button><button aria-pressed="false" data-rqfilter="3">RQ3</button><button aria-pressed="false" data-rqfilter="4">RQ4</button></div>
+<div class="rqgrid" id="rqgrid">
+<article class="rq" data-rq="1"><div class="rqtop"><span class="id">RQ1 / DIGITAL INTERMEDIARY</span><span class="badge">Parsial</span></div>
+<h3>Bagaimana siswa SMK berperan sebagai perantara digital dalam adopsi SIDEK ERP pada UMKM?</h3>
+<div class="metric"><b>57 pasangan siswa:</b> T0 3,687 → T1 3,869, Δ <b>+0,182</b>, <em>p</em> = 0,0034 (uji t berpasangan eksploratif).<br><b>T2–T3:</b> 220 respons dari 46 komposit yang berlabel siswa, rerata per komposit <b>3,907/5</b>.</div>
+<p>Peningkatan persepsi pengetahuan dan kesiapan pendampingan dapat dilaporkan; belum menunjukkan kontribusi siswa pada outcome UMKM yang dipasangkan secara langsung.</p>
+<details><summary>Kebutuhan data RQ1 — lihat detail</summary><ul>
+<li><b>Ledger penugasan:</b> person ID siswa dan guru, respondent ID UMKM, business ID, tanggal efektif dan perubahan pasangan</li>
+<li><b>Aktivitas aktual:</b> session ID, tanggal, durasi, modul ERP, jenis bantuan, tindakan siswa dan bukti kegiatan</li>
+<li><b>Logbook asli:</b> kendala, solusi, refleksi, penugasan lanjutan dan verifikasi guru</li>
+<li><b>Outcome terhubung:</b> perubahan catatan transaksi, pemakaian modul dan kemampuan UMKM berdasarkan dyad</li>
+<li><b>Adjudikasi peran:</b> verifikasi dua komposit dengan label siswa/guru yang tidak konsisten</li></ul></details></article>
+<article class="rq" data-rq="2"><div class="rqtop"><span class="id">RQ2 / CAPABILITY FORMATION</span><span class="badge">Parsial</span></div>
+<h3>Bagaimana pendampingan, logbook reflektif, dan coaching membentuk kapabilitas akuntansi digital UMKM?</h3>
+<div class="metric"><b>UMKM T2–T3:</b> 46 respons, 19 komposit responden–usaha, rerata penilaian pendampingan per komposit <b>3,998/5</b>.<br><b>UMKM T0–T1:</b> 49 pasangan lengkap, Δ −0,0034; <em>p</em> = 0,960.</div>
+<p>Persepsi pendampingan dapat dideskripsikan, tetapi survei belum menunjukkan perubahan kemampuan akuntansi berbasis kinerja. T0–T1 adalah kesiapan awal, bukan outcome akhir pendampingan.</p>
+<details><summary>Kebutuhan data RQ2 — lihat detail</summary><ul>
+<li><b>Coaching ledger:</b> tanggal, fasilitator, topik, durasi, frekuensi, tindakan dan status penyelesaian</li>
+<li><b>Logbook sesi:</b> session ID nyata, intensitas pendampingan per dyad, masalah, perbaikan dan refleksi</li>
+<li><b>Log ERP:</b> hari aktif, transaksi, fitur, kesalahan, koreksi, laporan dan rekonsiliasi</li>
+<li><b>Uji kemampuan:</b> penilaian input transaksi, kualitas laporan dan tugas praktik sebelum–sesudah</li>
+<li><b>Outcome akhir T4:</b> pengukuran penggunaan dan kemampuan berkelanjutan</li></ul></details></article>
+<article class="rq" data-rq="3"><div class="rqtop"><span class="id">RQ3 / COMPARATIVE EFFECTIVENESS</span><span class="badge red">Belum dapat diuji</span></div>
+<h3>Apakah UMKM mitra pendampingan berkembang lebih kuat daripada peserta umum yang hanya mengikuti pelatihan?</h3>
+<div class="metric"><b>Data pembanding belum direkonsiliasi.</b> Tidak ada respons T4 pada SMK maupun UMKM. Dari 51 pasangan UMKM T0–T1 sementara, 49 memiliki enam item lengkap.</div>
+<p>Hasil awal tidak cukup untuk mengestimasi perbedaan perubahan kelompok, apalagi efek kausal. Jangan menggunakan 49 pasangan UMKM sebagai bukti keunggulan kelompok mitra.</p>
+<details><summary>Kebutuhan data RQ3 — lihat detail</summary><ul>
+<li><b>Daftar kelompok:</b> status mitra/nonmitra, kriteria pemilihan, tanggal mulai dan pindah kelompok</li>
+<li><b>ID longitudinal:</b> person ID, business ID, gelombang T0/T1/T2–T3/T4 dengan matching terverifikasi</li>
+<li><b>Outcome T4:</b> instrumen sebanding, penggunaan ERP dan kualitas proses/laporan</li>
+<li><b>Variabel baseline:</b> skala/jenis usaha, literasi digital, kesiapan awal, kapasitas pembukuan</li>
+<li><b>Bias dan attrition:</b> kelengkapan peserta tiap kelompok, alasan hilang data, confounding dan rencana analisis perubahan</li></ul></details></article>
+<article class="rq" data-rq="4"><div class="rqtop"><span class="id">RQ4 / BARRIERS &amp; ENABLERS</span><span class="badge grey">Eksploratif</span></div>
+<h3>Faktor apa yang menjelaskan keberhasilan atau hambatan implementasi SIDEK ERP selama lima bulan?</h3>
+<div class="metric"><b>Bukti persepsi tersedia:</b> 254 respons refleksi/pendampingan SMK dan 46 respons pendampingan UMKM. Bukti peristiwa, penyelesaian masalah dan hasil ERP belum terintegrasi.</div>
+<p>Pengisian berulang sesuai rancangan sekitar sepuluh sesi, tetapi urutan pengiriman formulir tidak sama dengan nomor sesi aktual. Ada komposit SMK dengan 14 pengisian dan UMKM dengan 11 pengisian.</p>
+<details><summary>Kebutuhan data RQ4 — lihat detail</summary><ul>
+<li><b>Case ledger:</b> business ID, tahap adopsi, status implementasi, keberlanjutan dan alasan perubahan</li>
+<li><b>Incident log:</b> tanggal, masalah, penyebab yang diklaim, tindakan, durasi hingga selesai, dampaknya</li>
+<li><b>Wawancara/FGD:</b> siswa, guru, UMKM, tim teknis; transkrip, kode tema dan audit trail analitis</li>
+<li><b>Log ERP:</b> transaksi, mutu pencatatan, rekonsiliasi dan laporan untuk tiap kasus</li>
+<li><b>Triangulasi:</b> kronologi sesi, logbook, catatan coaching dan kasus sukses/tidak sukses</li></ul></details></article>
+</div></section>
+<section class="panel"><div class="overline">02 / Preliminary findings</div><h2>Perubahan T0–T1 dan indikator pendampingan T2–T3</h2><p class="sub">Grafik menampilkan level rata-rata item skala 1–5, bukan efek kausal. Skor T0–T1 dihitung hanya dari item dengan redaksi sama pada kedua gelombang.</p>
+<div class="cols"><div>
+<div class="barrow"><div class="barname"><span>Siswa SMK · 57 pasangan / 11 item</span><span>Δ +0,182</span></div>
+<div class="bar" role="img" aria-label="Siswa T0 3,687 dari 5"><span style="width:73.748%"></span></div><div class="barcaption"><span>T0 · 3,687</span><span>Skala 1–5</span></div>
+<div class="bar" role="img" aria-label="Siswa T1 3,869 dari 5"><span class="post" style="width:77.384%"></span></div><div class="barcaption"><span>T1 · 3,869</span><span>p = 0,0034</span></div></div>
+<div class="barrow"><div class="barname"><span>UMKM · 49 pasangan lengkap / 6 item</span><span>Δ −0,003</span></div>
+<div class="bar" role="img" aria-label="UMKM T0 4,306 dari 5"><span style="width:86.122%"></span></div><div class="barcaption"><span>T0 · 4,306</span><span>Skala 1–5</span></div>
+<div class="bar" role="img" aria-label="UMKM T1 4,303 dari 5"><span class="post" style="width:86.054%"></span></div><div class="barcaption"><span>T1 · 4,303</span><span>p = 0,960</span></div></div>
+<p class="sub">Biru = T0; hijau = T1. Uji t eksploratif; belum ada validasi konstruk final atau klaim program menyebabkan perubahan.</p>
+</div><div><div class="scroll"><table><thead><tr><th>Indikator T2–T3</th><th class="num">Respons</th><th class="num">Komposit</th><th class="num">Rerata*</th></tr></thead><tbody>
+<tr><td>SMK semua peran</td><td class="num">254</td><td class="num">57</td><td class="num"><b>3,968</b></td></tr>
+<tr><td>SMK berlabel siswa</td><td class="num">220</td><td class="num">46</td><td class="num">3,907</td></tr>
+<tr><td>UMKM</td><td class="num">46</td><td class="num">19</td><td class="num"><b>3,998</b></td></tr>
+</tbody></table></div><p class="sub">*Rerata pada tingkat identitas komposit, bukan formulir; pengisi yang lebih sering tidak otomatis memiliki bobot lebih besar. Semua angka bersifat deskriptif.</p></div></div>
+</section>
+<section class="panel"><div class="overline">03 / Data acquisition priorities</div><h2>Empat paket data yang diperlukan tim riset</h2><p class="sub">Setiap paket disusun dengan kunci penghubung, cakupan, dan keluaran analitis. “Belum terintegrasi” tidak berarti aktivitas atau datanya tidak pernah ada.</p>
+<div class="needs">
+<div class="need"><h3>1 · Penugasan siswa–UMKM &amp; sesi</h3><p>Prioritas RQ1, RQ2 dan RQ4</p><ul><li><strong>Kunci:</strong> siswa ID, guru ID, respondent ID, business ID, session ID</li><li><strong>Kolom wajib:</strong> tanggal sesi, durasi, peserta, modul, tindakan siswa, status penyelesaian dan persetujuan guru</li><li><strong>Keluaran:</strong> dyad dan intensitas pendampingan yang dapat diuji</li></ul></div>
+<div class="need"><h3>2 · Log operasional ERP &amp; coaching</h3><p>Prioritas RQ2, RQ3 dan RQ4</p><ul><li><strong>Kunci:</strong> business ID, event ID, session ID, timestamp</li><li><strong>Kolom wajib:</strong> transaksi, modul, laporan, koreksi, kendala, coaching dan waktu penyelesaian</li><li><strong>Keluaran:</strong> outcome penggunaan sistem dan kualitas proses akuntansi aktual</li></ul></div>
+<div class="need"><h3>3 · Kelompok pembanding &amp; T4</h3><p>Prioritas RQ3</p><ul><li><strong>Kunci:</strong> person ID, business ID, status mitra/nonmitra dan wave</li><li><strong>Kolom wajib:</strong> baseline, paparan intervensi, pengukuran T4, attrition, jenis usaha, penggunaan ERP dan mutu laporan</li><li><strong>Keluaran:</strong> perbandingan kelompok dengan pemeriksaan ketidakseimbangan baseline</li></ul></div>
+<div class="need"><h3>4 · Kasus, wawancara &amp; incident log</h3><p>Prioritas RQ4 dan RQ1</p><ul><li><strong>Kunci:</strong> case ID, business ID, session ID, event ID</li><li><strong>Kolom wajib:</strong> kejadian, akar masalah, perbaikan, bukti, transkrip, kode tema, status kasus</li><li><strong>Keluaran:</strong> penjelasan faktor keberhasilan/hambatan yang dapat ditriangulasi</li></ul></div></div>
+</section>
+<section class="panel"><div class="overline">04 / Methodological limits</div><h2>Batas interpretasi dan asal data</h2><div class="note">
+<p><strong>Dataset:</strong> frozen 14 November 2026 · 614 respons · 296 catatan QA · 116 pasangan T0–T1 sementara. Identitas dan adjudikasi lama dipertahankan dalam workbook sumber.</p>
+<p><strong>Pembedaan unit:</strong> siswa, guru, responden UMKM, usaha, sesi, serta formulir tidak boleh dianggap unit statistik yang sama. Satu pasangan guru memiliki urutan timestamp terbalik; dua pasangan UMKM tidak lengkap pada keenam item.</p>
+<p><strong>Belum tersedia:</strong> T4, log ERP objektif, penugasan siswa–UMKM yang direkonsiliasi, dan catatan kasus implementasi yang memadai. Pemetaan konstruk belum final.</p>
+<p><strong>Sumber statistik:</strong> <em>SIDEK ERP — Analisis Pendahuluan RQ1–RQ4 — Freeze 14 Nov 2026</em>. Halaman publik menampilkan angka agregat saja tanpa identitas peserta. Hasil belum final dan bukan bukti kausal.</p>
+</div></section>
+</main><footer>SIDEK ERP · Research Analysis · Static frozen dataset 14 November 2026</footer>
+<script>
+document.querySelectorAll('[data-rqfilter]').forEach(btn=>btn.addEventListener('click',()=>{
+const select=btn.dataset.rqfilter;
+document.querySelectorAll('[data-rqfilter]').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));
+document.querySelectorAll('[data-rq]').forEach(card=>card.hidden=select!=='all'&&card.dataset.rq!==select);
+}));
+</script>
+</body></html>

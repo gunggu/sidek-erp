@@ -51,6 +51,19 @@ footer{text-align:center;color:#77889b;font-size:12px;padding:10px 18px 30px}
 .sem-warnings{font-size:12px;line-height:1.7;color:#596f86;padding:0 0 0 19px}.sem-warnings li{margin-bottom:8px}
 @media(max-width:900px){.semgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:580px){.sem-diagram{flex-direction:column}.sem-link{transform:rotate(90deg);margin:10px 0}.model-node{min-width:165px}.semstat strong{font-size:22px}}
+
+.fullmodel-scroll{border:1px solid #dae6f1;background:#f8fbff;border-radius:14px;overflow-x:auto;overflow-y:hidden;padding:12px;scrollbar-width:thin}
+.fullmodel-svg{display:block;width:1400px;max-width:none;height:auto;font-family:inherit}
+.fullmodel-svg .model-svg-box rect{fill:#fff;stroke:#cad9e7;stroke-width:2}
+.fullmodel-svg .model-svg-box .node-supported{stroke:#2e7d9a;fill:#f2fafc}
+.fullmodel-svg .model-svg-box .node-partial{stroke:#d8a44c;fill:#fffaf0}
+.fullmodel-svg .model-svg-box .node-pending{stroke:#bbcbd9;fill:#fff}
+.fullmodel-svg .model-svg-box .node-train{stroke:#305f88;fill:#f0f6fd}
+.fullmodel-svg .model-svg-text text{fill:#4e6982;font-size:12px}
+.fullmodel-svg .model-svg-text .node-title{font-size:14px;font-weight:800;fill:#203e5a}
+.fullmodel-svg .model-svg-text .node-small{font-size:11px}
+.fullmodel-svg .model-hlabel text{font-size:13px;font-weight:800;fill:#275b7a;paint-order:stroke;stroke:#f8fbff;stroke-width:5px;stroke-linejoin:round}
+@media(max-width:700px){.fullmodel-scroll{padding:8px}.fullmodel-svg{width:1220px}}
 </style></head>
 <body><header><div class="brand">SIDEK ERP · RESEARCH MONITOR / FROZEN 14 NOV 2026</div>
 <h1>Analisis Riset &amp; Kesiapan Menjawab RQ</h1><p>Temuan awal, dukungan bukti bagi empat research question, dan data pendukung yang perlu dilengkapi. Angka berasal dari <strong>snapshot beku 14 November 2026</strong>. Tidak ada klaim keberhasilan implementasi final atau kausalitas dari survei saja.</p></header>
@@ -66,27 +79,93 @@ footer{text-align:center;color:#77889b;font-size:12px;padding:10px 18px 30px}
 <div class="overline">01 / Theoretical model</div>
 <h2 id="model-h">Model konseptual &amp; hipotesis penelitian</h2>
 <p class="sub">Model berikut mengikuti proposal <em>Siswa Vokasi sebagai Perantara Digital dalam Adopsi ERP UMKM</em> (versi bersih APA 7, bagian 7–8). Diagram menunjukkan hubungan <strong>yang diajukan</strong>, bukan hasil estimasi model penuh. Scroll horizontal pada layar kecil.</p>
-<div class="model-legend"><span><i></i>Bukti deskriptif atau uji awal</span><span><i class="proxy"></i>Proksi SEM eksploratif</span><span><i class="pending"></i>Belum teruji</span></div>
-<div class="model-box">
-<div class="model-steps" role="img" aria-label="Model penelitian: pelatihan awal menuju kesiapan mentor dan UMKM, pendampingan, refleksi, intensitas penggunaan ERP, Task Technology Fit, kualitas proses akuntansi dan kualitas pelaporan. H1 dan H2 diuji awal, H4 memiliki proksi eksploratif; lainnya memerlukan data tambahan.">
-<div class="model-node evidence"><span class="node-head">Pelatihan awal</span><span class="node-sub">T0–T1 · intervensi bersama</span></div>
-<div class="model-arrow"><small>H1 · H2</small>→</div>
-<div class="model-node evidence"><span class="node-head">Kesiapan peserta</span><span class="node-sub">Mentor SMK &amp; UMKM, diuji sementara T0–T1</span></div>
-<div class="model-arrow">→</div>
-<div class="model-node partial"><span class="node-head">Pendampingan SMK–UMKM</span><span class="node-sub">Intensitas &amp; kualitas · H3 dan H4</span></div>
-<div class="model-arrow"><small>H4</small>→</div>
-<div class="model-node partial"><span class="node-head">Pembelajaran reflektif</span><span class="node-sub">Logbook aktual belum tersedia; proksi survei T2–T3</span></div>
-<div class="model-arrow">→</div>
-<div class="model-node"><span class="node-head">Penggunaan ERP</span><span class="node-sub">Intensitas aktual · log dibutuhkan</span></div>
-<div class="model-arrow">→</div>
-<div class="model-node"><span class="node-head">Task–Technology Fit</span><span class="node-sub">Kesesuaian ERP dengan tugas akuntansi</span></div>
-<div class="model-arrow"><small>H7</small>→</div>
-<div class="model-node"><span class="node-head">Kualitas proses akuntansi</span><span class="node-sub">Kelengkapan, ketepatan, koreksi, audit trail</span></div>
-<div class="model-arrow"><small>H8</small>→</div>
-<div class="model-node"><span class="node-head">Kualitas pelaporan T4</span><span class="node-sub">Kelengkapan dan kegunaan laporan</span></div>
+<div class="model-legend"><span><i></i>Temuan awal T0–T1</span><span><i class="proxy"></i>Proksi H4 (SEM eksploratif)</span><span><i class="pending"></i>Hubungan belum diuji</span></div>
+<div class="fullmodel-scroll" tabindex="0" role="region" aria-label="Diagram lengkap model konseptual, gulir horizontal jika perlu">
+<svg class="fullmodel-svg" viewBox="0 0 1400 600" width="1400" height="600" role="img" aria-labelledby="fullmodel-title fullmodel-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="fullmodel-title">Model konseptual utuh SIDEK ERP berdasarkan proposal bersih APA 7</title>
+<desc id="fullmodel-desc">Pelatihan awal menuju kesiapan mentor SMK melalui H1 serta kesiapan adopsi UMKM melalui H2. Kesiapan mendasari intensitas dan kualitas pendampingan. H3 intensitas pendampingan berhubungan dengan intensitas penggunaan ERP. H4 kualitas pendampingan berhubungan dengan pembelajaran reflektif. H5 reflektif ke peningkatan task technology fit. H6 penggunaan ERP langsung ke kualitas proses. H7 mediasi penggunaan ERP melalui TTF ke kualitas proses. H8 kualitas proses ke kualitas pelaporan T4. P1 adalah proposisi transisi kendala berdasarkan logbook; P2 adalah efektivitas perantara yang terkait frekuensi, responsivitas dan kepercayaan. Perbandingan UMKM mitra dengan peserta umum bersifat naturalistik.</desc>
+<defs>
+ <marker id="modelArrowGrey" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#8297ab"/></marker>
+ <marker id="modelArrowBlue" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#2e7d9a"/></marker>
+ <marker id="modelArrowGold" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#b48530"/></marker>
+</defs>
+<!-- Hypothesis connectors first, so they appear behind node boxes -->
+<g fill="none" stroke="#8297ab" stroke-width="2.5" marker-end="url(#modelArrowGrey)">
+ <path d="M208 115 H239 V76 H270" stroke="#2e7d9a" marker-end="url(#modelArrowBlue)"/>
+ <path d="M208 115 H239 V229 H270" stroke="#2e7d9a" marker-end="url(#modelArrowBlue)"/>
+ <path d="M705 234 H770"/>
+ <path d="M705 78 H770" stroke="#b48530" marker-end="url(#modelArrowGold)"/>
+ <path d="M998 78 H1033"/>
+ <path d="M998 233 H1033"/>
+ <path d="M1148 278 V347"/>
+ <path d="M1148 440 V493"/>
+ <path d="M896 279 V341 H1102 V347" stroke="#8297ab"/>
+ <path d="M900 279 V318 H1110 V347" stroke-width="0" marker-end="none"/>
+</g>
+<!-- H7 usage to TTF, and H6 usage to accounting quality -->
+<path d="M873 185 V150 H1148 V145" fill="none" stroke="#8297ab" stroke-width="2.5" marker-end="url(#modelArrowGrey)"/>
+<path d="M1148 191 V347" fill="none" stroke="#8297ab" stroke-width="2.5" marker-end="url(#modelArrowGrey)"/>
+<!-- Readiness to mentoring: framework link, not numbered hypothesis -->
+<path d="M488 76 H510 V78 H518" stroke="#a9b9c9" stroke-width="2" stroke-dasharray="5 5" fill="none"/>
+<path d="M488 230 H509 V233 H518" stroke="#a9b9c9" stroke-width="2" stroke-dasharray="5 5" fill="none"/>
+<!-- Hypothesis badges -->
+<g class="model-hlabel">
+ <text x="235" y="61" text-anchor="middle">H1</text>
+ <text x="235" y="219" text-anchor="middle">H2</text>
+ <text x="737" y="216" text-anchor="middle">H3</text>
+ <text x="738" y="61" text-anchor="middle">H4*</text>
+ <text x="1017" y="61" text-anchor="middle">H5</text>
+ <text x="1015" y="221" text-anchor="middle">H6</text>
+ <text x="980" y="138" text-anchor="middle">H7a</text>
+ <text x="1167" y="305" text-anchor="start">H7b</text>
+ <text x="1170" y="468" text-anchor="start">H8</text>
+</g>
+<!-- Background nodes -->
+<g class="model-svg-box">
+ <rect x="22" y="77" width="186" height="75" rx="13" class="node-train"/>
+ <rect x="270" y="31" width="218" height="90" rx="13" class="node-supported"/>
+ <rect x="270" y="184" width="218" height="90" rx="13" class="node-supported"/>
+ <rect x="518" y="32" width="187" height="92" rx="13" class="node-partial"/>
+ <rect x="518" y="188" width="187" height="92" rx="13" class="node-pending"/>
+ <rect x="770" y="32" width="228" height="92" rx="13" class="node-partial"/>
+ <rect x="770" y="188" width="228" height="92" rx="13" class="node-pending"/>
+ <rect x="1033" y="100" width="230" height="91" rx="13" class="node-pending"/>
+ <rect x="1033" y="347" width="230" height="93" rx="13" class="node-pending"/>
+ <rect x="1033" y="493" width="230" height="78" rx="13" class="node-pending"/>
+</g>
+<g class="model-svg-text" text-anchor="middle">
+ <text x="115" y="103" class="node-title">Pelatihan awal</text><text x="115" y="123">SIDEK ERP</text><text x="115" y="140" class="node-small">T0 → T1</text>
+ <text x="379" y="58" class="node-title">Kesiapan mentor SMK</text><text x="379" y="78">Pengetahuan dan kesiapan</text><text x="379" y="95" class="node-small">H1: meningkat (uji awal)</text>
+ <text x="379" y="211" class="node-title">Kesiapan adopsi UMKM</text><text x="379" y="231">Kesiapan memakai ERP</text><text x="379" y="249" class="node-small">H2: belum didukung</text>
+ <text x="611" y="58" class="node-title">Kualitas pendampingan</text><text x="611" y="79">Responsif dan adaptif</text><text x="611" y="97" class="node-small">H4: hanya proksi survei</text>
+ <text x="611" y="216" class="node-title">Intensitas pendampingan</text><text x="611" y="236">Frekuensi dan durasi sesi</text><text x="611" y="254" class="node-small">H3: ledger belum terhubung</text>
+ <text x="884" y="58" class="node-title">Pembelajaran reflektif</text><text x="884" y="79">Refleksi berbasis logbook</text><text x="884" y="97" class="node-small">H4, H5 · logbook aktual perlu</text>
+ <text x="884" y="214" class="node-title">Intensitas penggunaan ERP</text><text x="884" y="235">Transaksi dan rutinitas</text><text x="884" y="253" class="node-small">H3, H6, H7 · log ERP perlu</text>
+ <text x="1148" y="124" class="node-title">Task–Technology Fit</text><text x="1148" y="146">Kesesuaian fitur dan tugas</text><text x="1148" y="164" class="node-small">H5, H7 · indikator TTF</text>
+ <text x="1148" y="374" class="node-title">Kualitas proses akuntansi</text><text x="1148" y="397">Akurasi, kelengkapan, koreksi</text><text x="1148" y="416" class="node-small">H6 langsung; H7 mediasi</text>
+ <text x="1148" y="520" class="node-title">Kualitas pelaporan T4</text><text x="1148" y="540">Laporan keuangan UMKM</text><text x="1148" y="555" class="node-small">H8 · T4 belum tersedia</text>
+</g>
+<!-- Context and propositions separate from causal model -->
+<rect x="25" y="355" width="900" height="213" rx="13" fill="#f7fafc" stroke="#d9e5ee" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="45" y="384" font-size="15" font-weight="800" fill="#2f516d">Mekanisme proses dan pembanding naturalistik — bukan jalur SEM tambahan</text>
+<rect x="45" y="403" width="265" height="70" rx="9" fill="white" stroke="#dce5ed"/>
+<text x="59" y="427" font-weight="800" font-size="14" fill="#295b72">P1 · Evolusi kendala</text>
+<text x="59" y="448" font-size="12" fill="#526b83">Teknis → proses → rutinisasi</text>
+<text x="59" y="462" font-size="11" fill="#708498">Dibuktikan lewat logbook berurutan</text>
+<rect x="331" y="403" width="275" height="70" rx="9" fill="white" stroke="#dce5ed"/>
+<text x="345" y="427" font-weight="800" font-size="14" fill="#295b72">P2 · Efektivitas perantara</text>
+<text x="345" y="448" font-size="12" fill="#526b83">Frekuensi, responsivitas, trust</text>
+<text x="345" y="462" font-size="11" fill="#708498">Dyad siswa–UMKM belum tervalidasi</text>
+<rect x="627" y="403" width="278" height="70" rx="9" fill="white" stroke="#dce5ed"/>
+<text x="641" y="427" font-weight="800" font-size="14" fill="#295b72">Perbandingan RQ3</text>
+<text x="641" y="448" font-size="12" fill="#526b83">UMKM mitra vs peserta umum</text>
+<text x="641" y="462" font-size="11" fill="#708498">Tidak acak; outcome T4 diperlukan</text>
+<text x="45" y="502" fill="#62768b" font-size="12">Kerangka: Situated Learning · Communities of Practice · Experiential Learning · Task–Technology Fit · Technology-in-Practice.</text>
+<text x="45" y="526" fill="#62768b" font-size="12">Garis putus-putus kesiapan → pendampingan = hubungan konseptual yang tidak memiliki kode H tersendiri.</text>
+</svg>
 </div>
-<p class="model-subnote"><strong>Jalur silang pada model asli:</strong> H3 = intensitas pendampingan → penggunaan ERP; H5 = refleksi → peningkatan TTF; H6 = penggunaan ERP → kualitas proses secara langsung; H7 = penggunaan ERP → TTF → kualitas proses (mediasi). Urutan visual di atas menyederhanakan alur dan <strong>bukan</strong> pengganti diagram jalur SEM lengkap. Tabel hipotesis merupakan rujukan hubungan yang tepat.</p>
-</div>
+<p class="model-subnote"><strong>Pembacaan model:</strong> H1/H2 adalah perubahan sebelum–sesudah pelatihan, bukan koefisien jalur SEM. H3 menghubungkan intensitas pendampingan dengan penggunaan ERP; H4 kualitas pendampingan dengan refleksi; H5 refleksi dengan peningkatan TTF; H6 penggunaan ERP dengan kualitas proses secara langsung; H7 adalah <em>mediasi penggunaan ERP → TTF → kualitas proses</em>; dan H8 menghubungkan proses dengan pelaporan T4. Diagram menampilkan seluruh hubungan berbeda, tanpa menyatakan bahwa model penuh sudah diestimasi.</p>
+<div class="model-alert"><strong>Status pengujian:</strong> H1 mendapat dukungan awal, H2 tidak menunjukkan kenaikan rerata yang terdeteksi, dan H4 hanya mempunyai uji proksi PLS-SEM eksploratif dengan masalah validitas diskriminan (HTMT 0,918). H3, H5, H6, H7 dan H8 belum diuji pada model lengkap.</div>
 <div class="scroll" style="margin-top:15px"><table class="hypotable"><thead><tr><th>Kode</th><th>Hipotesis / proposisi dalam proposal</th><th>Status data dan pengujian</th></tr></thead><tbody>
 <tr><td>H1</td><td>Kesiapan siswa SMK sebagai mentor digital meningkat T0–T1 setelah pelatihan.</td><td>Uji awal positif (57 pasangan; Δ +0,182; <em>p</em> = 0,0034); indeks belum divalidasi sebagai konstruk tunggal.</td></tr>
 <tr><td>H2</td><td>Kesiapan adopsi UMKM meningkat T0–T1 setelah pelatihan.</td><td>Tidak terdeteksi kenaikan rerata (49 pasangan lengkap; Δ −0,0034; <em>p</em> = 0,960). Bukan bukti efek nol.</td></tr>

@@ -334,7 +334,7 @@ document.querySelector('#model-download').addEventListener('click',()=>{
 const svgNode=document.querySelector('#concept-model-svg').cloneNode(true);
 svgNode.setAttribute('xmlns','http://www.w3.org/2000/svg');
 const style=document.createElementNS('http://www.w3.org/2000/svg','style');
-style.textContent=Array.from(document.styleSheets).filter(s=>{try{return !!s.cssRules}catch{return false}}).flatMap(s=>Array.from(s.cssRules)).map(r=>r.cssText).filter(t=>t.includes('.model-canvas')||t.includes('.map-')).join('\n');
+style.textContent=Array.from(document.styleSheets).filter(s=>{try{return !!s.cssRules}catch{return false}}).flatMap(s=>Array.from(s.cssRules)).map(r=>r.cssText).filter(t=>t.includes('.model-canvas')||t.includes('.map-')).map(t=>t.replaceAll('.model-canvas ','' ).replaceAll('.model-canvas.','.')).join('\n');
 svgNode.prepend(style);
 const data=new XMLSerializer().serializeToString(svgNode);
 const url=URL.createObjectURL(new Blob([data],{type:'image/svg+xml;charset=utf-8'}));

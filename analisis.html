@@ -20,6 +20,37 @@ table{width:100%;border-collapse:collapse;min-width:460px}th,td{padding:11px;bor
 footer{text-align:center;color:#77889b;font-size:12px;padding:10px 18px 30px}
 @media(max-width:870px){.cards{grid-template-columns:repeat(2,1fr)}.rqgrid,.needs,.cols{grid-template-columns:1fr}}
 @media(max-width:480px){main{padding:0 11px 30px}.panel{padding:17px}header{padding:24px 18px 80px}.card{padding:14px}.card strong{font-size:28px}.nav a{font-size:12px}.rq{padding:15px}}
+
+.model-legend{display:flex;flex-wrap:wrap;gap:11px;margin:7px 0 17px;font-size:12px;color:#536e87}
+.model-legend span{display:inline-flex;align-items:center;gap:6px}
+.model-legend i{width:10px;height:10px;border-radius:3px;background:#2c7eaa}
+.model-legend i.pending{background:#cad5e0}.model-legend i.proxy{background:#d6a146}
+.model-box{border:1px solid #d8e5f1;background:#f8fbff;border-radius:14px;padding:15px}
+.model-steps{display:flex;gap:8px;align-items:stretch;overflow-x:auto;padding-bottom:7px}
+.model-node{min-width:145px;max-width:225px;flex:1 0 140px;background:white;border:1px solid #cad9e8;border-top:4px solid #ccd9e5;border-radius:11px;padding:12px;display:flex;flex-direction:column;gap:5px}
+.model-node .node-head{font-size:13px;font-weight:800;color:#214260}
+.model-node .node-sub{color:#617891;font-size:11px;line-height:1.55}
+.model-node.evidence{border-top-color:#147d96}
+.model-node.partial{border-top-color:#dfa93e}
+.model-arrow{min-width:49px;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#56718c;font-size:19px;font-weight:800}
+.model-arrow small{font-size:10px;color:#59718a;white-space:nowrap}
+.model-duo{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.model-side{display:grid;gap:10px;margin-top:14px}
+.model-subnote{font-size:12px;line-height:1.7;color:#526d85;margin:10px 0 0}
+.model-alert{border-left:4px solid #cd8e36;padding:13px 17px;background:#fff8ea;color:#654d2d;font-size:12px;line-height:1.7;border-radius:9px;margin-top:13px}
+.hypotable{min-width:760px}.hypotable td{vertical-align:top;line-height:1.6}
+.hypotable td:first-child{font-weight:850;color:#143c60}
+.semgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin:13px 0 17px}
+.semstat{background:#f2f7fc;border:1px solid #e2eaf3;padding:13px;border-radius:11px}
+.semstat strong{font-size:25px;color:#143e64;display:block}
+.semstat span{font-size:11px;color:#617790;line-height:1.5}
+.sem-diagram{display:flex;align-items:center;justify-content:center;gap:12px;background:#f4f8fd;padding:18px;border-radius:13px;margin:14px 0}
+.sem-node{border:2px solid #287e9e;border-radius:12px;background:white;padding:16px 14px;flex:1;max-width:270px;text-align:center}
+.sem-node strong{display:block;color:#1b5272;font-size:13px}.sem-node small{display:block;color:#637b91;font-size:11px;margin-top:5px;line-height:1.5}
+.sem-link{text-align:center;color:#245c7c;font-weight:850;font-size:22px}.sem-link small{font-size:11px;display:block;font-weight:650}
+.sem-warnings{font-size:12px;line-height:1.7;color:#596f86;padding:0 0 0 19px}.sem-warnings li{margin-bottom:8px}
+@media(max-width:900px){.semgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.sem-diagram{flex-direction:column}.sem-link{transform:rotate(90deg);margin:10px 0}.model-node{min-width:165px}.semstat strong{font-size:22px}}
 </style></head>
 <body><header><div class="brand">SIDEK ERP · RESEARCH MONITOR / FROZEN 14 NOV 2026</div>
 <h1>Analisis Riset &amp; Kesiapan Menjawab RQ</h1><p>Temuan awal, dukungan bukti bagi empat research question, dan data pendukung yang perlu dilengkapi. Angka berasal dari <strong>snapshot beku 14 November 2026</strong>. Tidak ada klaim keberhasilan implementasi final atau kausalitas dari survei saja.</p></header>
@@ -30,7 +61,78 @@ footer{text-align:center;color:#77889b;font-size:12px;padding:10px 18px 30px}
 <div class="card"><strong>300</strong><span>Respons berulang T2–T3: 254 SMK, 46 UMKM</span></div>
 <div class="card"><strong>0</strong><span>Respons T4; outcome akhir belum terkumpul</span></div>
 </section>
-<section class="panel" aria-labelledby="rqh"><div class="overline">01 / Research Questions</div><h2 id="rqh">Status bukti untuk setiap RQ</h2><p class="sub">Status menjelaskan batas bukti metodologis, bukan persentase kesiapan yang diasumsikan. Pilih RQ atau buka daftar kebutuhan datanya.</p>
+
+<section class="panel" id="model-hipotesis" aria-labelledby="model-h">
+<div class="overline">01 / Theoretical model</div>
+<h2 id="model-h">Model konseptual &amp; hipotesis penelitian</h2>
+<p class="sub">Model berikut mengikuti proposal <em>Siswa Vokasi sebagai Perantara Digital dalam Adopsi ERP UMKM</em> (versi bersih APA 7, bagian 7–8). Diagram menunjukkan hubungan <strong>yang diajukan</strong>, bukan hasil estimasi model penuh. Scroll horizontal pada layar kecil.</p>
+<div class="model-legend"><span><i></i>Bukti deskriptif atau uji awal</span><span><i class="proxy"></i>Proksi SEM eksploratif</span><span><i class="pending"></i>Belum teruji</span></div>
+<div class="model-box">
+<div class="model-steps" role="img" aria-label="Model penelitian: pelatihan awal menuju kesiapan mentor dan UMKM, pendampingan, refleksi, intensitas penggunaan ERP, Task Technology Fit, kualitas proses akuntansi dan kualitas pelaporan. H1 dan H2 diuji awal, H4 memiliki proksi eksploratif; lainnya memerlukan data tambahan.">
+<div class="model-node evidence"><span class="node-head">Pelatihan awal</span><span class="node-sub">T0–T1 · intervensi bersama</span></div>
+<div class="model-arrow"><small>H1 · H2</small>→</div>
+<div class="model-node evidence"><span class="node-head">Kesiapan peserta</span><span class="node-sub">Mentor SMK &amp; UMKM, diuji sementara T0–T1</span></div>
+<div class="model-arrow">→</div>
+<div class="model-node partial"><span class="node-head">Pendampingan SMK–UMKM</span><span class="node-sub">Intensitas &amp; kualitas · H3 dan H4</span></div>
+<div class="model-arrow"><small>H4</small>→</div>
+<div class="model-node partial"><span class="node-head">Pembelajaran reflektif</span><span class="node-sub">Logbook aktual belum tersedia; proksi survei T2–T3</span></div>
+<div class="model-arrow"><small>H3</small>→</div>
+<div class="model-node"><span class="node-head">Penggunaan ERP</span><span class="node-sub">Intensitas aktual · log dibutuhkan</span></div>
+<div class="model-arrow"><small>H5</small>→</div>
+<div class="model-node"><span class="node-head">Task–Technology Fit</span><span class="node-sub">Kesesuaian ERP dengan tugas akuntansi</span></div>
+<div class="model-arrow"><small>H6 · H7</small>→</div>
+<div class="model-node"><span class="node-head">Kualitas proses akuntansi</span><span class="node-sub">Kelengkapan, ketepatan, koreksi, audit trail</span></div>
+<div class="model-arrow"><small>H8</small>→</div>
+<div class="model-node"><span class="node-head">Kualitas pelaporan T4</span><span class="node-sub">Kelengkapan dan kegunaan laporan</span></div>
+</div>
+<p class="model-subnote"><strong>Catatan jalur:</strong> H3 menghubungkan intensitas pendampingan dengan penggunaan ERP, H5 menghubungkan refleksi dengan peningkatan TTF, H6 menghubungkan penggunaan ERP langsung dengan kualitas proses, dan H7 menguji jalur tidak langsung penggunaan ERP → TTF → kualitas proses. Diagram ini adalah ringkasan urutan konsep; hubungan cabang dijelaskan tepat pada tabel hipotesis di bawah.</p>
+</div>
+<div class="scroll" style="margin-top:15px"><table class="hypotable"><thead><tr><th>Kode</th><th>Hipotesis / proposisi dalam proposal</th><th>Status data dan pengujian</th></tr></thead><tbody>
+<tr><td>H1</td><td>Kesiapan siswa SMK sebagai mentor digital meningkat T0–T1 setelah pelatihan.</td><td>Uji awal positif (57 pasangan; Δ +0,182; <em>p</em> = 0,0034); indeks belum divalidasi sebagai konstruk tunggal.</td></tr>
+<tr><td>H2</td><td>Kesiapan adopsi UMKM meningkat T0–T1 setelah pelatihan.</td><td>Tidak terdeteksi kenaikan rerata (49 pasangan lengkap; Δ −0,0034; <em>p</em> = 0,960). Bukan bukti efek nol.</td></tr>
+<tr><td>H3</td><td>Intensitas pendampingan berhubungan positif dengan intensitas penggunaan ERP UMKM.</td><td>Belum diuji: ledger sesi dan log penggunaan ERP belum terhubung.</td></tr>
+<tr><td>H4</td><td>Kualitas pendampingan berhubungan positif dengan pembelajaran reflektif yang terekam dalam logbook.</td><td><strong>Proksi PLS-SEM eksploratif saja</strong> pada 44 siswa berperan konsisten; validitas diskriminan bermasalah (HTMT 0,918). Bukan pengujian H4 penuh.</td></tr>
+<tr><td>H5</td><td>Pembelajaran reflektif berhubungan positif dengan peningkatan Task–Technology Fit (TTF).</td><td>Belum diuji: TTF komparabel dan peningkatannya belum tersedia/terintegrasi.</td></tr>
+<tr><td>H6</td><td>Intensitas penggunaan ERP berhubungan positif dengan kualitas proses akuntansi UMKM.</td><td>Belum diuji: penggunaan dan kualitas akuntansi objektif tidak ada pada panel.</td></tr>
+<tr><td>H7</td><td>TTF memediasi hubungan intensitas penggunaan ERP dengan kualitas proses akuntansi.</td><td>Belum diuji: belum ada tiga konstruk yang terukur secara terhubung untuk estimasi mediasi.</td></tr>
+<tr><td>H8</td><td>Kualitas proses akuntansi berhubungan positif dengan kualitas pelaporan UMKM pada T4.</td><td>Belum diuji: T4 kosong dan bukti mutu laporan belum terintegrasi.</td></tr>
+<tr><td>P1</td><td>Logbook menunjukkan transisi dari kendala teknis menuju kendala proses lalu rutinisasi.</td><td>Belum teruji: logbook naratif dan jejak waktu aktual dibutuhkan untuk penelusuran proses.</td></tr>
+<tr><td>P2</td><td>Efektivitas siswa sebagai perantara digital lebih tinggi pada hubungan dengan frekuensi, responsivitas, dan kepercayaan yang kuat.</td><td>Belum teruji: dyad siswa–UMKM, frekuensi sesi tervalidasi, responsivitas dan trust belum lengkap.</td></tr>
+</tbody></table></div>
+</section>
+<section class="panel" id="sem-parsial" aria-labelledby="sem-h">
+<div class="overline">02 / Exploratory partial PLS-SEM</div>
+<h2 id="sem-h">Uji SEM parsial: proksi H4 pada siswa SMK</h2>
+<p class="sub">Model dua konstruk reflektif pada data T2–T3 siswa, bukan SEM model lengkap H1–H8. Setiap siswa hanya menyumbang <strong>satu baris</strong>, yakni rata-rata seluruh pengisian pada identitas kompositnya. Digunakan siswa dengan peran konsisten pada seluruh T2–T3 untuk menghindari campuran guru atau konflik peran.</p>
+<div class="sem-diagram" role="img" aria-label="Kualitas perilaku pendampingan yang dilaporkan siswa berkaitan positif dengan refleksi diri, koefisien PLS 0,883. Jalur tidak dapat dianggap kausal.">
+<div class="sem-node"><strong>Perilaku pendampingan</strong><small>Q07–Q12 · enam item laporan diri siswa</small></div>
+<div class="sem-link"><small>β = 0,883</small>→</div>
+<div class="sem-node"><strong>Refleksi pembelajaran</strong><small>Q01–Q06 · enam item laporan diri siswa, bukan bukti logbook</small></div>
+</div>
+<div class="semgrid">
+<div class="semstat"><strong>44</strong><span>Identitas siswa dengan peran konsisten · 206 respons T2–T3</span></div>
+<div class="semstat"><strong>0,883</strong><span>Koefisien jalur terstandar PLS Mode A</span></div>
+<div class="semstat"><strong>0,781</strong><span>R² refleksi, in-sample dan bukan validasi prediksi</span></div>
+<div class="semstat"><strong>0,918</strong><span>HTMT · melebihi ambang 0,90; validitas diskriminan bermasalah</span></div>
+</div>
+<div class="scroll"><table><thead><tr><th>Ukuran</th><th class="num">Pendampingan (Q07–Q12)</th><th class="num">Refleksi (Q01–Q06)</th></tr></thead><tbody>
+<tr><td>Cronbach α</td><td class="num">0,963</td><td class="num">0,958</td></tr>
+<tr><td>Composite reliability (ρc)</td><td class="num">0,970</td><td class="num">0,966</td></tr>
+<tr><td>Average variance extracted (AVE)</td><td class="num">0,844</td><td class="num">0,826</td></tr>
+<tr><td>Rentang outer loading</td><td class="num">0,823–0,949</td><td class="num">0,838–0,939</td></tr>
+</tbody></table></div>
+<p class="sub" style="margin-top:12px"><strong>Bootstrap:</strong> 1.800 resampel siswa, seed 20261115; interval persentil 95% β = <strong>[0,782; 0,953]</strong>, tidak melintasi nol. Sensitivitas rerata dua blok item sederhana: korelasi Pearson 0,883 (44 siswa), Spearman 0,878; setelah mengecualikan satu siswa dengan 14 pengisian, Pearson 0,878 (43 siswa). Resampling dilakukan pada <strong>identitas siswa</strong>, bukan formulir individual.</p>
+<div class="model-alert"><strong>H4 belum dapat dinyatakan terkonfirmasi.</strong> HTMT = 0,918 menunjukkan kedua konstruk bisa sulit dibedakan; reliabilitas sangat tinggi juga dapat menandakan tumpang tindih item. Kedua blok berasal dari self-report orang dan periode yang sama, tanpa logbook aktual atau evaluasi UMKM independen. Hubungan PLS-SEM ini hanya mendukung <em>asosiasi antardua proksi survei</em>; bukan efek kausal, mutu pendampingan yang terobservasi, atau refleksi yang telah diverifikasi.</div>
+<details style="margin-top:15px"><summary>Metode dan aturan replikasi</summary><ul class="sem-warnings">
+<li>Dataset: <em>SIDEK ERP — FROZEN Research Dataset — 2026-11-14</em>, tab SMK_Panel, T2–T3. Satu unit = satu identitas komposit siswa; item setiap unit dirata-ratakan atas seluruh pengisian.</li>
+<li>Eksklusi dari 57 komposit SMK T2–T3: tidak semua berlabel siswa konsisten. Sampel akhir <strong>44</strong> komposit dengan peran hanya "Siswa"; total 206 formulir, bukan N = 206 independen.</li>
+<li>Skema PLS dua blok: indikator distandardisasi, Mode A dengan pembaruan bobot melalui korelasi indikator dengan skor konstruk tetangga sampai konvergen; jalur internal diestimasi sebagai regresi sederhana terstandar. Bootstrap ulang per identitas komposit 1.800 kali.</li>
+<li>Interpretasi bootstrap adalah asosiasi dalam sampel dan dipengaruhi asumsi sampel independen antarorang; penugasan guru atau sekolah yang sama belum dimodelkan sebagai klaster lebih tinggi. Statistik ini memerlukan verifikasi ulang dengan perangkat SEM terstandar sebelum digunakan dalam artikel.</li>
+<li>Uji sensitivitas: Pearson komposit 0,883; jika hanya komposit dengan minimal dua pengisian (n = 28), Pearson 0,933. Perbedaan tersebut menunjukkan hasil bergantung pada cakupan pengukuran berulang.</li>
+<li>Untuk menguji H4 sesuai proposal, tambahkan evaluasi kualitas pendampingan dari UMKM/guru, logbook refleksi yang dikode independen, tautan dyad, dan validasi konstruk.</li>
+</ul></details>
+</section>
+<section class="panel" aria-labelledby="rqh"><div class="overline">03 / Research Questions</div><h2 id="rqh">Status bukti untuk setiap RQ</h2><p class="sub">Status menjelaskan batas bukti metodologis, bukan persentase kesiapan yang diasumsikan. Pilih RQ atau buka daftar kebutuhan datanya.</p>
 <div class="filters" aria-label="Filter RQ"><button aria-pressed="true" data-rqfilter="all">Semua</button><button aria-pressed="false" data-rqfilter="1">RQ1</button><button aria-pressed="false" data-rqfilter="2">RQ2</button><button aria-pressed="false" data-rqfilter="3">RQ3</button><button aria-pressed="false" data-rqfilter="4">RQ4</button></div>
 <div class="rqgrid" id="rqgrid">
 <article class="rq" data-rq="1"><div class="rqtop"><span class="id">RQ1 / DIGITAL INTERMEDIARY</span><span class="badge">Parsial</span></div>
@@ -74,7 +176,7 @@ footer{text-align:center;color:#77889b;font-size:12px;padding:10px 18px 30px}
 <li><b>Log ERP:</b> transaksi, mutu pencatatan, rekonsiliasi dan laporan untuk tiap kasus</li>
 <li><b>Triangulasi:</b> kronologi sesi, logbook, catatan coaching dan kasus sukses/tidak sukses</li></ul></details></article>
 </div></section>
-<section class="panel"><div class="overline">02 / Preliminary findings</div><h2>Perubahan T0–T1 dan indikator pendampingan T2–T3</h2><p class="sub">Grafik menampilkan level rata-rata item skala 1–5, bukan efek kausal. Skor T0–T1 dihitung hanya dari item dengan redaksi sama pada kedua gelombang.</p>
+<section class="panel"><div class="overline">04 / Preliminary findings</div><h2>Perubahan T0–T1 dan indikator pendampingan T2–T3</h2><p class="sub">Grafik menampilkan level rata-rata item skala 1–5, bukan efek kausal. Skor T0–T1 dihitung hanya dari item dengan redaksi sama pada kedua gelombang.</p>
 <div class="cols"><div>
 <div class="barrow"><div class="barname"><span>Siswa SMK · 57 pasangan / 11 item</span><span>Δ +0,182</span></div>
 <div class="bar" role="img" aria-label="Siswa T0 3,687 dari 5"><span style="width:73.748%"></span></div><div class="barcaption"><span>T0 · 3,687</span><span>Skala 1–5</span></div>
@@ -89,14 +191,14 @@ footer{text-align:center;color:#77889b;font-size:12px;padding:10px 18px 30px}
 <tr><td>UMKM</td><td class="num">46</td><td class="num">19</td><td class="num"><b>3,998</b></td></tr>
 </tbody></table></div><p class="sub">*Rerata pada tingkat identitas komposit, bukan formulir; pengisi yang lebih sering tidak otomatis memiliki bobot lebih besar. Semua angka bersifat deskriptif.</p></div></div>
 </section>
-<section class="panel"><div class="overline">03 / Data acquisition priorities</div><h2>Empat paket data yang diperlukan tim riset</h2><p class="sub">Setiap paket disusun dengan kunci penghubung, cakupan, dan keluaran analitis. “Belum terintegrasi” tidak berarti aktivitas atau datanya tidak pernah ada.</p>
+<section class="panel"><div class="overline">05 / Data acquisition priorities</div><h2>Empat paket data yang diperlukan tim riset</h2><p class="sub">Setiap paket disusun dengan kunci penghubung, cakupan, dan keluaran analitis. “Belum terintegrasi” tidak berarti aktivitas atau datanya tidak pernah ada.</p>
 <div class="needs">
 <div class="need"><h3>1 · Penugasan siswa–UMKM &amp; sesi</h3><p>Prioritas RQ1, RQ2 dan RQ4</p><ul><li><strong>Kunci:</strong> siswa ID, guru ID, respondent ID, business ID, session ID</li><li><strong>Kolom wajib:</strong> tanggal sesi, durasi, peserta, modul, tindakan siswa, status penyelesaian dan persetujuan guru</li><li><strong>Keluaran:</strong> dyad dan intensitas pendampingan yang dapat diuji</li></ul></div>
 <div class="need"><h3>2 · Log operasional ERP &amp; coaching</h3><p>Prioritas RQ2, RQ3 dan RQ4</p><ul><li><strong>Kunci:</strong> business ID, event ID, session ID, timestamp</li><li><strong>Kolom wajib:</strong> transaksi, modul, laporan, koreksi, kendala, coaching dan waktu penyelesaian</li><li><strong>Keluaran:</strong> outcome penggunaan sistem dan kualitas proses akuntansi aktual</li></ul></div>
 <div class="need"><h3>3 · Kelompok pembanding &amp; T4</h3><p>Prioritas RQ3</p><ul><li><strong>Kunci:</strong> person ID, business ID, status mitra/nonmitra dan wave</li><li><strong>Kolom wajib:</strong> baseline, paparan intervensi, pengukuran T4, attrition, jenis usaha, penggunaan ERP dan mutu laporan</li><li><strong>Keluaran:</strong> perbandingan kelompok dengan pemeriksaan ketidakseimbangan baseline</li></ul></div>
 <div class="need"><h3>4 · Kasus, wawancara &amp; incident log</h3><p>Prioritas RQ4 dan RQ1</p><ul><li><strong>Kunci:</strong> case ID, business ID, session ID, event ID</li><li><strong>Kolom wajib:</strong> kejadian, akar masalah, perbaikan, bukti, transkrip, kode tema, status kasus</li><li><strong>Keluaran:</strong> penjelasan faktor keberhasilan/hambatan yang dapat ditriangulasi</li></ul></div></div>
 </section>
-<section class="panel"><div class="overline">04 / Methodological limits</div><h2>Batas interpretasi dan asal data</h2><div class="note">
+<section class="panel"><div class="overline">06 / Methodological limits</div><h2>Batas interpretasi dan asal data</h2><div class="note">
 <p><strong>Dataset:</strong> frozen 14 November 2026 · 614 respons · 296 catatan QA · 116 pasangan T0–T1 sementara. Identitas dan adjudikasi lama dipertahankan dalam workbook sumber.</p>
 <p><strong>Pembedaan unit:</strong> siswa, guru, responden UMKM, usaha, sesi, serta formulir tidak boleh dianggap unit statistik yang sama. Satu pasangan guru memiliki urutan timestamp terbalik; dua pasangan UMKM tidak lengkap pada keenam item.</p>
 <p><strong>Belum tersedia:</strong> T4, log ERP objektif, penugasan siswa–UMKM yang direkonsiliasi, dan catatan kasus implementasi yang memadai. Pemetaan konstruk belum final.</p>

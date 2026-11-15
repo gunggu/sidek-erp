@@ -64,6 +64,36 @@ footer{text-align:center;color:#77889b;font-size:12px;padding:10px 18px 30px}
 .fullmodel-svg .model-svg-text .node-small{font-size:11px}
 .fullmodel-svg .model-hlabel text{font-size:13px;font-weight:800;fill:#275b7a;paint-order:stroke;stroke:#f8fbff;stroke-width:5px;stroke-linejoin:round}
 @media(max-width:700px){.fullmodel-scroll{padding:8px}.fullmodel-svg{width:1220px}}
+
+/* Evidence-led conceptual diagram */
+.model-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:13px}
+.model-toolbar .model-legend{margin:0}
+.model-actions{display:flex;flex-wrap:wrap;gap:7px}
+.model-actions button{border:1px solid #c9d9e8;background:#f8fbff;color:#254b6c;padding:8px 11px;border-radius:9px;font-size:12px;font-weight:750}
+.model-actions button[aria-pressed=true]{background:#123e65;color:#fff;border-color:#123e65}
+.model-actions button:focus-visible{outline:3px solid #dfa735;outline-offset:2px}
+.model-canvas{padding:9px;border:1px solid #d7e5f1;border-radius:13px;background:#f8fbff;overflow-x:auto;scrollbar-width:thin}
+.model-canvas svg{display:block;height:auto;font-family:inherit;max-width:none}
+.model-canvas.fitted svg{width:100%;min-width:0}
+.model-canvas.expanded svg{width:1290px;min-width:1290px}
+.model-canvas .map-node rect{fill:#fff;stroke:#b9cbd9;stroke-width:2}
+.model-canvas .map-node.training rect{fill:#eaf2fe;stroke:#4e7cab}
+.model-canvas .map-node.tested rect{fill:#edf9fb;stroke:#2c89a1}
+.model-canvas .map-node.proxy rect{fill:#fff9e9;stroke:#c89a45}
+.model-canvas .map-main{font-size:13px;font-weight:800;fill:#23425b}
+.model-canvas .map-sub{font-size:11px;fill:#5c728a}
+.model-canvas .map-edge{fill:none;stroke-width:2.5}
+.model-canvas .map-edge.initial{stroke:#287f9a}
+.model-canvas .map-edge.proxy{stroke:#bb8d31}
+.model-canvas .map-edge.pending{stroke:#829ab2}
+.model-canvas .map-edge.dashed{stroke:#a0aec0;stroke-dasharray:6 5}
+.model-canvas .map-label{font-size:13px;font-weight:850;fill:#255d7c;stroke:#f7fbff;stroke-width:5;paint-order:stroke}
+.model-canvas .map-context-title{font-weight:850;font-size:14px;letter-spacing:.045em;fill:#315675}
+.model-canvas .map-context-bold{font-size:14px;font-weight:800;fill:#295b77}
+.model-canvas .map-context-small{font-size:11px;fill:#657d92}
+.model-canvas svg text{font-size:12px;fill:#4b6a82}
+@media(max-width:800px){.model-canvas.fitted svg{min-width:900px;width:900px}.model-canvas{padding:6px}.model-toolbar{align-items:flex-start}}
+@media(max-width:450px){.model-toolbar .model-legend{font-size:11px}.model-actions button{font-size:11px;padding:7px 9px}}
 </style></head>
 <body><header><div class="brand">SIDEK ERP · RESEARCH MONITOR / FROZEN 14 NOV 2026</div>
 <h1>Analisis Riset &amp; Kesiapan Menjawab RQ</h1><p>Temuan awal, dukungan bukti bagi empat research question, dan data pendukung yang perlu dilengkapi. Angka berasal dari <strong>snapshot beku 14 November 2026</strong>. Tidak ada klaim keberhasilan implementasi final atau kausalitas dari survei saja.</p></header>
@@ -79,93 +109,31 @@ footer{text-align:center;color:#77889b;font-size:12px;padding:10px 18px 30px}
 <div class="overline">01 / Theoretical model</div>
 <h2 id="model-h">Model konseptual &amp; hipotesis penelitian</h2>
 <p class="sub">Model berikut mengikuti proposal <em>Siswa Vokasi sebagai Perantara Digital dalam Adopsi ERP UMKM</em> (versi bersih APA 7, bagian 7–8). Diagram menunjukkan hubungan <strong>yang diajukan</strong>, bukan hasil estimasi model penuh. Scroll horizontal pada layar kecil.</p>
-<div class="model-legend"><span><i></i>Temuan awal T0–T1</span><span><i class="proxy"></i>Proksi H4 (SEM eksploratif)</span><span><i class="pending"></i>Hubungan belum diuji</span></div>
-<div class="fullmodel-scroll" tabindex="0" role="region" aria-label="Diagram lengkap model konseptual, gulir horizontal jika perlu">
-<svg class="fullmodel-svg" viewBox="0 0 1400 600" width="1400" height="600" role="img" aria-labelledby="fullmodel-title fullmodel-desc" xmlns="http://www.w3.org/2000/svg">
-<title id="fullmodel-title">Model konseptual utuh SIDEK ERP berdasarkan proposal bersih APA 7</title>
-<desc id="fullmodel-desc">Pelatihan awal menuju kesiapan mentor SMK melalui H1 serta kesiapan adopsi UMKM melalui H2. Kesiapan mendasari intensitas dan kualitas pendampingan. H3 intensitas pendampingan berhubungan dengan intensitas penggunaan ERP. H4 kualitas pendampingan berhubungan dengan pembelajaran reflektif. H5 reflektif ke peningkatan task technology fit. H6 penggunaan ERP langsung ke kualitas proses. H7 mediasi penggunaan ERP melalui TTF ke kualitas proses. H8 kualitas proses ke kualitas pelaporan T4. P1 adalah proposisi transisi kendala berdasarkan logbook; P2 adalah efektivitas perantara yang terkait frekuensi, responsivitas dan kepercayaan. Perbandingan UMKM mitra dengan peserta umum bersifat naturalistik.</desc>
-<defs>
- <marker id="modelArrowGrey" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#8297ab"/></marker>
- <marker id="modelArrowBlue" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#2e7d9a"/></marker>
- <marker id="modelArrowGold" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#b48530"/></marker>
-</defs>
-<!-- Hypothesis connectors first, so they appear behind node boxes -->
-<g fill="none" stroke="#8297ab" stroke-width="2.5" marker-end="url(#modelArrowGrey)">
- <path d="M208 115 H239 V76 H270" stroke="#2e7d9a" marker-end="url(#modelArrowBlue)"/>
- <path d="M208 115 H239 V229 H270" stroke="#2e7d9a" marker-end="url(#modelArrowBlue)"/>
- <path d="M705 234 H770"/>
- <path d="M705 78 H770" stroke="#b48530" marker-end="url(#modelArrowGold)"/>
- <path d="M998 78 H1017 V123 H1033"/>
- <path d="M998 233 H1018 V376 H1033"/>
- 
- <path d="M1148 440 V493"/>
- 
- 
-</g>
-<!-- H7 usage to TTF, and H6 usage to accounting quality -->
-<path d="M873 185 V150 H1033" fill="none" stroke="#8297ab" stroke-width="2.5" marker-end="url(#modelArrowGrey)"/>
-<path d="M1189 191 V347" fill="none" stroke="#8297ab" stroke-width="2.5" marker-end="url(#modelArrowGrey)"/>
-<!-- Readiness to mentoring: framework link, not numbered hypothesis -->
-<path d="M488 76 H510 V78 H518" stroke="#a9b9c9" stroke-width="2" stroke-dasharray="5 5" fill="none"/>
-<path d="M488 230 H509 V233 H518" stroke="#a9b9c9" stroke-width="2" stroke-dasharray="5 5" fill="none"/>
-<!-- Hypothesis badges -->
-<g class="model-hlabel">
- <text x="235" y="61" text-anchor="middle">H1</text>
- <text x="235" y="219" text-anchor="middle">H2</text>
- <text x="737" y="216" text-anchor="middle">H3</text>
- <text x="738" y="61" text-anchor="middle">H4*</text>
- <text x="1021" y="108" text-anchor="middle">H5</text>
- <text x="1023" y="322" text-anchor="start">H6</text>
- <text x="980" y="138" text-anchor="middle">H7a</text>
- <text x="1199" y="305" text-anchor="start">H7b</text>
- <text x="1170" y="468" text-anchor="start">H8</text>
-</g>
-<!-- Background nodes -->
-<g class="model-svg-box">
- <rect x="22" y="77" width="186" height="75" rx="13" class="node-train"/>
- <rect x="270" y="31" width="218" height="90" rx="13" class="node-supported"/>
- <rect x="270" y="184" width="218" height="90" rx="13" class="node-supported"/>
- <rect x="518" y="32" width="187" height="92" rx="13" class="node-partial"/>
- <rect x="518" y="188" width="187" height="92" rx="13" class="node-pending"/>
- <rect x="770" y="32" width="228" height="92" rx="13" class="node-partial"/>
- <rect x="770" y="188" width="228" height="92" rx="13" class="node-pending"/>
- <rect x="1033" y="100" width="230" height="91" rx="13" class="node-pending"/>
- <rect x="1033" y="347" width="230" height="93" rx="13" class="node-pending"/>
- <rect x="1033" y="493" width="230" height="78" rx="13" class="node-pending"/>
-</g>
-<g class="model-svg-text" text-anchor="middle">
- <text x="115" y="103" class="node-title">Pelatihan awal</text><text x="115" y="123">SIDEK ERP</text><text x="115" y="140" class="node-small">T0 → T1</text>
- <text x="379" y="58" class="node-title">Kesiapan mentor SMK</text><text x="379" y="78">Pengetahuan dan kesiapan</text><text x="379" y="95" class="node-small">H1: meningkat (uji awal)</text>
- <text x="379" y="211" class="node-title">Kesiapan adopsi UMKM</text><text x="379" y="231">Kesiapan memakai ERP</text><text x="379" y="249" class="node-small">H2: belum didukung</text>
- <text x="611" y="58" class="node-title">Kualitas pendampingan</text><text x="611" y="79">Responsif dan adaptif</text><text x="611" y="97" class="node-small">H4: hanya proksi survei</text>
- <text x="611" y="216" class="node-title">Intensitas pendampingan</text><text x="611" y="236">Frekuensi dan durasi sesi</text><text x="611" y="254" class="node-small">H3: ledger belum terhubung</text>
- <text x="884" y="58" class="node-title">Pembelajaran reflektif</text><text x="884" y="79">Refleksi berbasis logbook</text><text x="884" y="97" class="node-small">H4, H5 · logbook aktual perlu</text>
- <text x="884" y="214" class="node-title">Intensitas penggunaan ERP</text><text x="884" y="235">Transaksi dan rutinitas</text><text x="884" y="253" class="node-small">H3, H6, H7 · log ERP perlu</text>
- <text x="1148" y="124" class="node-title">Task–Technology Fit</text><text x="1148" y="146">Kesesuaian fitur dan tugas</text><text x="1148" y="164" class="node-small">H5, H7 · indikator TTF</text>
- <text x="1148" y="374" class="node-title">Kualitas proses akuntansi</text><text x="1148" y="397">Akurasi, kelengkapan, koreksi</text><text x="1148" y="416" class="node-small">H6 langsung; H7 mediasi</text>
- <text x="1148" y="520" class="node-title">Kualitas pelaporan T4</text><text x="1148" y="540">Laporan keuangan UMKM</text><text x="1148" y="555" class="node-small">H8 · T4 belum tersedia</text>
-</g>
-<!-- Context and propositions separate from causal model -->
-<rect x="25" y="355" width="900" height="213" rx="13" fill="#f7fafc" stroke="#d9e5ee" stroke-width="2" stroke-dasharray="5 4"/>
-<text x="45" y="384" font-size="15" font-weight="800" fill="#2f516d">Mekanisme proses dan pembanding naturalistik — bukan jalur SEM tambahan</text>
-<rect x="45" y="403" width="265" height="70" rx="9" fill="white" stroke="#dce5ed"/>
-<text x="59" y="427" font-weight="800" font-size="14" fill="#295b72">P1 · Evolusi kendala</text>
-<text x="59" y="448" font-size="12" fill="#526b83">Teknis → proses → rutinisasi</text>
-<text x="59" y="462" font-size="11" fill="#708498">Dibuktikan lewat logbook berurutan</text>
-<rect x="331" y="403" width="275" height="70" rx="9" fill="white" stroke="#dce5ed"/>
-<text x="345" y="427" font-weight="800" font-size="14" fill="#295b72">P2 · Efektivitas perantara</text>
-<text x="345" y="448" font-size="12" fill="#526b83">Frekuensi, responsivitas, trust</text>
-<text x="345" y="462" font-size="11" fill="#708498">Dyad siswa–UMKM belum tervalidasi</text>
-<rect x="627" y="403" width="278" height="70" rx="9" fill="white" stroke="#dce5ed"/>
-<text x="641" y="427" font-weight="800" font-size="14" fill="#295b72">Perbandingan RQ3</text>
-<text x="641" y="448" font-size="12" fill="#526b83">UMKM mitra vs peserta umum</text>
-<text x="641" y="462" font-size="11" fill="#708498">Tidak acak; outcome T4 diperlukan</text>
-<text x="45" y="502" fill="#62768b" font-size="12">Kerangka: Situated Learning · Communities of Practice · Experiential Learning · Task–Technology Fit · Technology-in-Practice.</text>
-<text x="45" y="526" fill="#62768b" font-size="12">Garis putus-putus kesiapan → pendampingan = hubungan konseptual yang tidak memiliki kode H tersendiri.</text>
-</svg>
-</div>
-<p class="model-subnote"><strong>Pembacaan model:</strong> H1/H2 adalah perubahan sebelum–sesudah pelatihan, bukan koefisien jalur SEM. H3 menghubungkan intensitas pendampingan dengan penggunaan ERP; H4 kualitas pendampingan dengan refleksi; H5 refleksi dengan peningkatan TTF; H6 penggunaan ERP dengan kualitas proses secara langsung; H7 adalah <em>mediasi penggunaan ERP → TTF → kualitas proses</em>; dan H8 menghubungkan proses dengan pelaporan T4. Diagram menampilkan seluruh hubungan berbeda, tanpa menyatakan bahwa model penuh sudah diestimasi.</p>
-<div class="model-alert"><strong>Status pengujian:</strong> H1 mendapat dukungan awal, H2 tidak menunjukkan kenaikan rerata yang terdeteksi, dan H4 hanya mempunyai uji proksi PLS-SEM eksploratif dengan masalah validitas diskriminan (HTMT 0,918). H3, H5, H6, H7 dan H8 belum diuji pada model lengkap.</div>
+<div class="model-toolbar"><div class="model-legend"><span><i></i>H1–H2: uji awal</span><span><i class="proxy"></i>H4: proksi eksploratif</span><span><i class="pending"></i>Jalur belum diuji</span></div><div class="model-actions"><button type="button" id="model-fit" aria-pressed="true" title="Sesuaikan lebar diagram">Sesuaikan</button><button type="button" id="model-expand" aria-pressed="false" title="Tampilkan ukuran diagram lebih besar">Perbesar</button><button type="button" id="model-download" title="Simpan diagram sebagai SVG">Simpan SVG</button></div></div>
+<div class="model-canvas fitted" id="model-canvas" tabindex="0" role="region" aria-label="Model konseptual SIDEK ERP, dapat diperbesar atau digulir ketika mode perbesar"><svg id="concept-model-svg" viewBox="0 0 1290 720" width="1290" height="720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="concept-model-title concept-model-desc"><title id="concept-model-title">Model konseptual lengkap SIDEK ERP, H1 sampai H8 dan dua proposisi</title><desc id="concept-model-desc">Pelatihan menuju kesiapan SMK H1 dan kesiapan UMKM H2. Intensitas pendampingan menuju penggunaan ERP H3, kualitas pendampingan menuju refleksi H4, refleksi menuju kesesuaian teknologi dan tugas H5, penggunaan ERP langsung menuju kualitas proses akuntansi H6. H7 adalah mediasi penggunaan ERP melalui kesesuaian teknologi-tugas menuju kualitas proses akuntansi. H8 adalah kualitas proses ke pelaporan T4. P1 menjelaskan evolusi kendala, P2 menjelaskan frekuensi responsivitas dan kepercayaan. Pembanding adalah UMKM mitra versus peserta umum, bukan jalur SEM.</desc>
+<defs><marker id="arrow-initial" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#287f9a"/></marker><marker id="arrow-pending" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#829ab2"/></marker><marker id="arrow-proxy" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#bb8d31"/></marker><marker id="arrow-dashed" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#a0aec0"/></marker></defs>
+<rect x="7" y="7" width="1276" height="476" rx="16" fill="#f7fbff" stroke="#e1eaf3"/>
+<g class="map-paths"><path d="M186 290 H216 V166 H245" class="map-edge initial" marker-end="url(#arrow-initial)"/><path d="M186 290 H216 V362 H245" class="map-edge initial" marker-end="url(#arrow-initial)"/><path d="M420 166 H443 V131 H475" class="map-edge dashed" marker-end="url(#arrow-dashed)"/><path d="M420 362 H475" class="map-edge dashed" marker-end="url(#arrow-dashed)"/><path d="M640 135 H690" class="map-edge proxy" marker-end="url(#arrow-proxy)"/><path d="M640 347 H690" class="map-edge pending" marker-end="url(#arrow-pending)"/><path d="M855 120 H930" class="map-edge pending" marker-end="url(#arrow-pending)"/><path d="M855 345 H894 V392 H930" class="map-edge pending" marker-end="url(#arrow-pending)"/><path d="M778 300 V222 H995 V166" class="map-edge pending" marker-end="url(#arrow-pending)"/><path d="M1066 166 V350" class="map-edge pending" marker-end="url(#arrow-pending)"/><path d="M1095 392 H1140" class="map-edge pending" marker-end="url(#arrow-pending)"/></g>
+<g class="map-node training"><rect x="36" y="249" width="150" height="82" rx="12"/><text x="111" y="275" text-anchor="middle" class="map-main">Pelatihan awal</text><text x="111" y="296" text-anchor="middle" class="map-main">SIDEK ERP</text><text x="111" y="315" text-anchor="middle" class="map-sub">T0 → T1</text></g>
+<g class="map-node tested"><rect x="245" y="125" width="175" height="82" rx="12"/><text x="332.5" y="151" text-anchor="middle" class="map-main">Kesiapan mentor</text><text x="332.5" y="172" text-anchor="middle" class="map-main">siswa SMK</text><text x="332.5" y="191" text-anchor="middle" class="map-sub">H1 · T0–T1</text></g>
+<g class="map-node tested"><rect x="245" y="321" width="175" height="82" rx="12"/><text x="332.5" y="347" text-anchor="middle" class="map-main">Kesiapan adopsi</text><text x="332.5" y="368" text-anchor="middle" class="map-main">UMKM</text><text x="332.5" y="387" text-anchor="middle" class="map-sub">H2 · T0–T1</text></g>
+<g class="map-node proxy"><rect x="475" y="94" width="165" height="82" rx="12"/><text x="557.5" y="120" text-anchor="middle" class="map-main">Kualitas</text><text x="557.5" y="141" text-anchor="middle" class="map-main">pendampingan</text><text x="557.5" y="160" text-anchor="middle" class="map-sub">Penilaian relasional</text></g>
+<g class="map-node pending"><rect x="475" y="306" width="165" height="82" rx="12"/><text x="557.5" y="332" text-anchor="middle" class="map-main">Intensitas</text><text x="557.5" y="353" text-anchor="middle" class="map-main">pendampingan</text><text x="557.5" y="372" text-anchor="middle" class="map-sub">Sesi dan durasi</text></g>
+<g class="map-node proxy"><rect x="690" y="79" width="165" height="82" rx="12"/><text x="772.5" y="105" text-anchor="middle" class="map-main">Pembelajaran</text><text x="772.5" y="126" text-anchor="middle" class="map-main">reflektif</text><text x="772.5" y="145" text-anchor="middle" class="map-sub">Logbook aktual</text></g>
+<g class="map-node pending"><rect x="690" y="300" width="165" height="82" rx="12"/><text x="772.5" y="326" text-anchor="middle" class="map-main">Intensitas</text><text x="772.5" y="347" text-anchor="middle" class="map-main">penggunaan ERP</text><text x="772.5" y="366" text-anchor="middle" class="map-sub">Aktivitas sistem</text></g>
+<g class="map-node pending"><rect x="930" y="84" width="165" height="82" rx="12"/><text x="1012.5" y="110" text-anchor="middle" class="map-main">Task–Technology</text><text x="1012.5" y="131" text-anchor="middle" class="map-main">Fit (TTF)</text><text x="1012.5" y="150" text-anchor="middle" class="map-sub">Kesesuaian tugas</text></g>
+<g class="map-node pending"><rect x="930" y="350" width="165" height="82" rx="12"/><text x="1012.5" y="376" text-anchor="middle" class="map-main">Kualitas proses</text><text x="1012.5" y="397" text-anchor="middle" class="map-main">akuntansi</text><text x="1012.5" y="416" text-anchor="middle" class="map-sub">Akurasi dan kontrol</text></g>
+<g class="map-node pending"><rect x="1140" y="350" width="125" height="82" rx="12"/><text x="1202.5" y="376" text-anchor="middle" class="map-main">Kualitas</text><text x="1202.5" y="397" text-anchor="middle" class="map-main">pelaporan</text><text x="1202.5" y="416" text-anchor="middle" class="map-sub">T4</text></g>
+<g><text class="map-label" x="212" y="185" text-anchor="middle">H1</text><text class="map-label" x="211" y="345" text-anchor="middle">H2</text><text class="map-label" x="662" y="108" text-anchor="middle">H4*</text><text class="map-label" x="662" y="331" text-anchor="middle">H3</text><text class="map-label" x="891" y="102" text-anchor="middle">H5</text><text class="map-label" x="892" y="373" text-anchor="middle">H6</text><text class="map-label" x="868" y="206" text-anchor="middle">H7a</text><text class="map-label" x="1078" y="257" text-anchor="middle">H7b</text><text class="map-label" x="1117" y="375" text-anchor="middle">H8</text></g>
+<rect x="15" y="497" width="1259" height="202" rx="14" fill="#f5f9fc" stroke="#dae5f0"/>
+<text x="38" y="525" class="map-context-title">PROPOSISI &amp; DESAIN PEMBANDING — bukan jalur SEM tambahan</text>
+<rect x="38" y="545" width="365" height="101" rx="11" fill="white" stroke="#d8e4ef"/><text x="55" y="570" class="map-context-bold">P1 · Perubahan sifat kendala</text><text x="55" y="594">Kendala teknis → kendala proses → rutinisasi</text><text x="55" y="618" class="map-context-small">Bukti: logbook naratif dan urutan kejadian</text>
+<rect x="461" y="545" width="366" height="101" rx="11" fill="white" stroke="#d8e4ef"/><text x="478" y="570" class="map-context-bold">P2 · Efektivitas perantara digital</text><text x="478" y="594">Frekuensi · responsivitas · kepercayaan</text><text x="478" y="618" class="map-context-small">Bukti: hubungan siswa–UMKM terverifikasi</text>
+<rect x="886" y="545" width="365" height="101" rx="11" fill="white" stroke="#d8e4ef"/><text x="903" y="570" class="map-context-bold">RQ3 · Pembanding naturalistik</text><text x="903" y="594">UMKM mitra vs peserta pelatihan umum</text><text x="903" y="618" class="map-context-small">Tidak acak · T4 masih kosong</text>
+<text x="38" y="675" class="map-context-small">Garis putus-putus kesiapan → pendampingan menunjukkan hubungan konseptual tanpa kode hipotesis tersendiri.</text>
+</svg></div>
+<p class="model-subnote"><strong>H3</strong> intensitas pendampingan → penggunaan ERP; <strong>H4</strong> kualitas pendampingan → refleksi; <strong>H5</strong> refleksi → TTF; <strong>H6</strong> penggunaan ERP → kualitas proses secara langsung; <strong>H7</strong> mediasi penggunaan ERP → TTF → kualitas proses; <strong>H8</strong> kualitas proses → pelaporan. H1–H2 adalah hipotesis perubahan T0–T1, bukan jalur SEM. Diagram menggambarkan hipotesis yang diajukan, bukan hasil estimasi model penuh.</p>
+<div class="model-alert"><strong>Perhatian:</strong> H1 memiliki dukungan awal; H2 tidak menunjukkan perubahan rerata yang terdeteksi; H4 baru memiliki proksi survei dengan HTMT 0,918; H3 dan H5–H8 belum diuji. Warna jalur menunjukkan status ketersediaan bukti, bukan besarnya efek.</div>
 <div class="scroll" style="margin-top:15px"><table class="hypotable"><thead><tr><th>Kode</th><th>Hipotesis / proposisi dalam proposal</th><th>Status data dan pengujian</th></tr></thead><tbody>
 <tr><td>H1</td><td>Kesiapan siswa SMK sebagai mentor digital meningkat T0–T1 setelah pelatihan.</td><td>Uji awal positif (57 pasangan; Δ +0,182; <em>p</em> = 0,0034); indeks belum divalidasi sebagai konstruk tunggal.</td></tr>
 <tr><td>H2</td><td>Kesiapan adopsi UMKM meningkat T0–T1 setelah pelatihan.</td><td>Tidak terdeteksi kenaikan rerata (49 pasangan lengkap; Δ −0,0034; <em>p</em> = 0,960). Bukan bukti efek nol.</td></tr>
@@ -290,5 +258,30 @@ const select=btn.dataset.rqfilter;
 document.querySelectorAll('[data-rqfilter]').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));
 document.querySelectorAll('[data-rq]').forEach(card=>card.hidden=select!=='all'&&card.dataset.rq!==select);
 }));
+
+const modelCanvas=document.querySelector('#model-canvas');
+const fitButton=document.querySelector('#model-fit');
+const expandButton=document.querySelector('#model-expand');
+function setModelSize(expanded){
+modelCanvas.classList.toggle('expanded',expanded);
+modelCanvas.classList.toggle('fitted',!expanded);
+fitButton.setAttribute('aria-pressed',String(!expanded));
+expandButton.setAttribute('aria-pressed',String(expanded));
+if(!expanded)modelCanvas.scrollLeft=0;
+}
+fitButton.addEventListener('click',()=>setModelSize(false));
+expandButton.addEventListener('click',()=>setModelSize(true));
+document.querySelector('#model-download').addEventListener('click',()=>{
+const svgNode=document.querySelector('#concept-model-svg').cloneNode(true);
+svgNode.setAttribute('xmlns','http://www.w3.org/2000/svg');
+const style=document.createElementNS('http://www.w3.org/2000/svg','style');
+style.textContent=Array.from(document.styleSheets).filter(s=>{try{return !!s.cssRules}catch{return false}}).flatMap(s=>Array.from(s.cssRules)).map(r=>r.cssText).filter(t=>t.includes('.model-canvas')||t.includes('.map-')).join('\n');
+svgNode.prepend(style);
+const data=new XMLSerializer().serializeToString(svgNode);
+const url=URL.createObjectURL(new Blob([data],{type:'image/svg+xml;charset=utf-8'}));
+const link=document.createElement('a');
+link.href=url;link.download='SIDEK_ERP_Model_Konseptual_H1-H8.svg';link.click();
+setTimeout(()=>URL.revokeObjectURL(url),2500);
+});
 </script>
 </body></html>

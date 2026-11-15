@@ -94,6 +94,54 @@ footer{text-align:center;color:#77889b;font-size:12px;padding:10px 18px 30px}
 .model-canvas svg text{font-size:12px;fill:#4b6a82}
 @media(max-width:800px){.model-canvas.fitted svg{min-width:900px;width:900px}.model-canvas{padding:6px}.model-toolbar{align-items:flex-start}}
 @media(max-width:450px){.model-toolbar .model-legend{font-size:11px}.model-actions button{font-size:11px;padding:7px 9px}}
+
+.sem-validity{border:1px solid #e8cda0;background:#fff9eb;border-left:5px solid #d09a35;border-radius:12px;padding:16px 18px;margin:13px 0 17px;display:flex;align-items:center;gap:20px}
+.sem-validity>div{flex:0 0 260px;display:grid;gap:6px}
+.sem-validity strong{color:#704e18;font-size:21px;line-height:1.2}
+.sem-validity p{font-size:12px;line-height:1.7;color:#6d5936;margin:0}
+.sem-flag{font-size:10px;font-weight:850;letter-spacing:.08em;color:#865e26}
+.sem-visual{display:grid;grid-template-columns:minmax(0,1fr) minmax(130px,.48fr) minmax(0,1fr);align-items:stretch;gap:13px;padding:17px;border-radius:15px;border:1px solid #dce8f2;background:#f4f8fd}
+.measurement-block{background:white;border:1px solid #d5e3f0;border-radius:13px;padding:14px;min-width:0}
+.measurement-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:13px}
+.measurement-head div{display:grid;gap:6px}
+.measurement-head span{font-size:10px;color:#3d7897;font-weight:800;letter-spacing:.055em}
+.measurement-head strong{color:#204663;font-size:14px;line-height:1.3}
+.measurement-head small{font-size:11px;color:#6e8296;white-space:nowrap}
+.measurement-items{display:grid;gap:11px}
+.measurement-item{display:grid;grid-template-columns:43px minmax(0,1fr) 42px;gap:7px;align-items:center}
+.measurement-item>span{font-size:11px;color:#57738b;font-weight:800}
+.measurement-item strong{font-size:12px;color:#315573;text-align:right;font-variant-numeric:tabular-nums}
+.loading-track{height:9px;border-radius:6px;background:#e4eef8;overflow:hidden}
+.loading-track span{display:block;height:100%;background:#3287a3;border-radius:6px}
+.measure-summary{padding-top:11px;margin-top:12px;border-top:1px solid #e8eef5;font-size:11px;color:#667d92;line-height:1.55}
+.sem-path{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:8px;min-width:0}
+.sem-path>span{font-size:10px;font-weight:800;letter-spacing:.055em;color:#5b7690}
+.sem-path strong{font-size:25px;white-space:nowrap;color:#1b5672}
+.sem-path small{font-size:10px;color:#74889b}
+.sem-arrow-line{width:100%;height:2px;background:#2c7e9b;position:relative;margin:9px 0}
+.sem-arrow-line:after{content:"";position:absolute;right:0;top:-6px;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:10px solid #2c7e9b}
+.sem-caption{margin-top:10px!important}
+.hypotable tbody tr{background:white}
+.hypotable tbody td:first-child{font-weight:850}
+.mobile-model-summary{display:none}
+@media(max-width:920px){.sem-visual{grid-template-columns:1fr}.sem-path{padding:13px 0}.sem-arrow-line{max-width:150px}.sem-validity{align-items:flex-start}.sem-validity>div{flex-basis:210px}}
+@media(max-width:700px){
+.sem-validity{flex-direction:column;gap:8px}.sem-validity>div{flex:auto}.sem-validity strong{font-size:18px}
+.hypotable{min-width:0!important}
+.hypotable thead{display:none}
+.hypotable tbody{display:grid;grid-template-columns:1fr;gap:11px}
+.hypotable tbody tr{display:block;border:1px solid #dde7f2;border-radius:12px;background:#fafcff;padding:14px}
+.hypotable td{display:block;border:0;padding:4px 0;font-size:12px}
+.hypotable td:first-child{font-size:15px;color:#245a7e}
+.hypotable td:nth-child(2):before{content:"Hipotesis / proposisi";display:block;color:#6f8497;font-size:10px;font-weight:850;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.hypotable td:nth-child(3):before{content:"Status bukti";display:block;color:#6f8497;font-size:10px;font-weight:850;letter-spacing:.06em;text-transform:uppercase;margin:7px 0 4px}
+.mobile-model-summary{display:grid;gap:6px;background:#f5f9fd;border:1px solid #d9e6f1;border-radius:12px;padding:13px;margin-bottom:12px}
+.mobile-model-summary .level{border:1px solid #cfdfed;border-radius:9px;background:white;padding:10px;display:grid;gap:3px;text-align:center}
+.mobile-model-summary strong{color:#204863;font-size:13px}
+.mobile-model-summary span{font-size:11px;color:#60778c}
+.mobile-model-summary .join{text-align:center;color:#326b86;font-weight:850}
+.mobile-model-summary .fork{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+}
 </style></head>
 <body><header><div class="brand">SIDEK ERP · RESEARCH MONITOR / FROZEN 14 NOV 2026</div>
 <h1>Analisis Riset &amp; Kesiapan Menjawab RQ</h1><p>Temuan awal, dukungan bukti bagi empat research question, dan data pendukung yang perlu dilengkapi. Angka berasal dari <strong>snapshot beku 14 November 2026</strong>. Tidak ada klaim keberhasilan implementasi final atau kausalitas dari survei saja.</p></header>
@@ -110,6 +158,7 @@ footer{text-align:center;color:#77889b;font-size:12px;padding:10px 18px 30px}
 <h2 id="model-h">Model konseptual &amp; hipotesis penelitian</h2>
 <p class="sub">Model berikut mengikuti proposal <em>Siswa Vokasi sebagai Perantara Digital dalam Adopsi ERP UMKM</em> (versi bersih APA 7, bagian 7–8). Diagram menunjukkan hubungan <strong>yang diajukan</strong>, bukan hasil estimasi model penuh. Scroll horizontal pada layar kecil.</p>
 <div class="model-toolbar"><div class="model-legend"><span><i></i>H1–H2: uji awal</span><span><i class="proxy"></i>H4: proksi eksploratif</span><span><i class="pending"></i>Jalur belum diuji</span></div><div class="model-actions"><button type="button" id="model-fit" aria-pressed="true" title="Sesuaikan lebar diagram">Sesuaikan</button><button type="button" id="model-expand" aria-pressed="false" title="Tampilkan ukuran diagram lebih besar">Perbesar</button><button type="button" id="model-download" title="Simpan diagram sebagai SVG">Simpan SVG</button></div></div>
+<div class="mobile-model-summary" aria-label="Ringkasan tahapan model untuk ponsel"><div class="level"><strong>Pelatihan awal</strong><span>H1–H2 · Kesiapan siswa dan UMKM</span></div><div class="join">↓</div><div class="fork"><div class="level"><strong>Intensitas</strong><span>H3 → penggunaan ERP</span></div><div class="level"><strong>Kualitas</strong><span>H4 → refleksi</span></div></div><div class="join">↓</div><div class="level"><strong>Jalur implementasi</strong><span>Refleksi → TTF (H5) · Penggunaan ERP → kualitas proses (H6)</span></div><div class="join">↓</div><div class="level"><strong>Mediasi H7</strong><span>Penggunaan ERP → TTF → kualitas proses</span></div><div class="join">↓</div><div class="level"><strong>Pelaporan akhir T4 (H8)</strong><span>Diagram lengkap tersedia di bawah, gunakan tombol Perbesar</span></div></div>
 <div class="model-canvas fitted" id="model-canvas" tabindex="0" role="region" aria-label="Model konseptual SIDEK ERP, dapat diperbesar atau digulir ketika mode perbesar"><svg id="concept-model-svg" viewBox="0 0 1290 720" width="1290" height="720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="concept-model-title concept-model-desc"><title id="concept-model-title">Model konseptual lengkap SIDEK ERP, H1 sampai H8 dan dua proposisi</title><desc id="concept-model-desc">Pelatihan menuju kesiapan SMK H1 dan kesiapan UMKM H2. Intensitas pendampingan menuju penggunaan ERP H3, kualitas pendampingan menuju refleksi H4, refleksi menuju kesesuaian teknologi dan tugas H5, penggunaan ERP langsung menuju kualitas proses akuntansi H6. H7 adalah mediasi penggunaan ERP melalui kesesuaian teknologi-tugas menuju kualitas proses akuntansi. H8 adalah kualitas proses ke pelaporan T4. P1 menjelaskan evolusi kendala, P2 menjelaskan frekuensi responsivitas dan kepercayaan. Pembanding adalah UMKM mitra versus peserta umum, bukan jalur SEM.</desc>
 <defs><marker id="arrow-initial" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#287f9a"/></marker><marker id="arrow-pending" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#829ab2"/></marker><marker id="arrow-proxy" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#bb8d31"/></marker><marker id="arrow-dashed" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9" fill="#a0aec0"/></marker></defs>
 <rect x="7" y="7" width="1276" height="476" rx="16" fill="#f7fbff" stroke="#e1eaf3"/>
@@ -151,11 +200,21 @@ footer{text-align:center;color:#77889b;font-size:12px;padding:10px 18px 30px}
 <div class="overline">02 / Exploratory partial PLS-SEM</div>
 <h2 id="sem-h">Uji SEM parsial: proksi H4 pada siswa SMK</h2>
 <p class="sub">Model dua konstruk reflektif pada data T2–T3 siswa, bukan SEM model lengkap H1–H8. Setiap siswa hanya menyumbang <strong>satu baris</strong>, yakni rata-rata seluruh pengisian pada identitas kompositnya. Digunakan siswa dengan peran konsisten pada seluruh T2–T3 untuk menghindari campuran guru atau konflik peran.</p>
-<div class="sem-diagram" role="img" aria-label="Kualitas perilaku pendampingan yang dilaporkan siswa berkaitan positif dengan refleksi diri, koefisien PLS 0,883. Jalur tidak dapat dianggap kausal.">
-<div class="sem-node"><strong>Perilaku pendampingan</strong><small>Q07–Q12 · enam item laporan diri siswa</small></div>
-<div class="sem-link"><small>β = 0,883</small>→</div>
-<div class="sem-node"><strong>Refleksi pembelajaran</strong><small>Q01–Q06 · enam item laporan diri siswa, bukan bukti logbook</small></div>
+<div class="sem-validity"><div><span class="sem-flag">VALIDITAS DISKRIMINAN BELUM MEMADAI</span><strong>HTMT = 0,918 &gt; 0,90</strong></div><p>Koefisien jalur yang tinggi <strong>bukan konfirmasi H4</strong>. Kedua konstruk bersumber dari laporan diri siswa dan periode yang sama; logbook aktual serta penilaian pendampingan independen belum terintegrasi.</p></div>
+<div class="sem-visual" role="group" aria-label="Inner model dan outer loadings hasil PLS-SEM eksploratif">
+ <div class="measurement-block">
+  <div class="measurement-head"><div><span>REFLEKTIF · SELF-REPORT</span><strong>Perilaku pendampingan</strong></div><small>Q07–Q12</small></div>
+  <div class="measurement-items"><div class="measurement-item"><span>Q07</span><div class="loading-track"><span style="width:92.6%"></span></div><strong>0,926</strong></div><div class="measurement-item"><span>Q08</span><div class="loading-track"><span style="width:92.9%"></span></div><strong>0,929</strong></div><div class="measurement-item"><span>Q09</span><div class="loading-track"><span style="width:94.8%"></span></div><strong>0,948</strong></div><div class="measurement-item"><span>Q10</span><div class="loading-track"><span style="width:93.6%"></span></div><strong>0,936</strong></div><div class="measurement-item"><span>Q11</span><div class="loading-track"><span style="width:94.3%"></span></div><strong>0,943</strong></div><div class="measurement-item"><span>Q12</span><div class="loading-track"><span style="width:82.3%"></span></div><strong>0,823</strong></div></div>
+  <div class="measure-summary">α 0,963 · CR 0,970 · AVE 0,844</div>
+ </div>
+ <div class="sem-path"><span>INNER MODEL</span><strong>β = 0,883</strong><div class="sem-arrow-line" aria-hidden="true"></div><span>R² refleksi = 0,781</span><small>PLS Mode A · n = 44 siswa</small></div>
+ <div class="measurement-block">
+  <div class="measurement-head"><div><span>REFLEKTIF · SELF-REPORT</span><strong>Refleksi pembelajaran</strong></div><small>Q01–Q06</small></div>
+  <div class="measurement-items"><div class="measurement-item"><span>Q01</span><div class="loading-track"><span style="width:83.8%"></span></div><strong>0,838</strong></div><div class="measurement-item"><span>Q02</span><div class="loading-track"><span style="width:90.1%"></span></div><strong>0,901</strong></div><div class="measurement-item"><span>Q03</span><div class="loading-track"><span style="width:93.5%"></span></div><strong>0,935</strong></div><div class="measurement-item"><span>Q04</span><div class="loading-track"><span style="width:93.5%"></span></div><strong>0,935</strong></div><div class="measurement-item"><span>Q05</span><div class="loading-track"><span style="width:90.1%"></span></div><strong>0,901</strong></div><div class="measurement-item"><span>Q06</span><div class="loading-track"><span style="width:93.9%"></span></div><strong>0,939</strong></div></div>
+  <div class="measure-summary">α 0,958 · CR 0,966 · AVE 0,826</div>
+ </div>
 </div>
+<p class="sub sem-caption">Batang menggambarkan <em>outer loading terstandar</em>, bukan persentase keberhasilan. Indikator dirata-ratakan per siswa terlebih dahulu; hasil bukan SEM lengkap H1–H8.</p>
 <div class="semgrid">
 <div class="semstat"><strong>44</strong><span>Identitas siswa dengan peran konsisten · 206 respons T2–T3</span></div>
 <div class="semstat"><strong>0,883</strong><span>Koefisien jalur terstandar PLS Mode A</span></div>
